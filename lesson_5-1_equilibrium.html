@@ -5,13 +5,13 @@
 </style></head><body>
 <header><div class="brand"><div class="logo">⚖</div><div><h1>معمل اتزان القوى</h1><p class="sub">الفصل الأول · الميكانيكا · الدرس 1-5</p></div></div><a href="index.html">← العودة إلى قائمة المعامل</a></header>
 <main><section class="hero"><h2>كيف تبقى الأجسام في حالة اتزان تحت تأثير عدة قوى؟</h2><p>استكشف نظام اتزان لافتة معلقة بكابل مائل وحبل أفقي (أو كابلين مائلين). غيّر الكتلة وزاوية الشد وشاهد التفاعل الحركي الفوري لمتجهات القوى وشرطي الاتزان ($\Sigma F_x = 0$ و $\Sigma F_y = 0$).</p></section>
-<div class="layout"><section class="panel"><div class="panel-head"><h3>🔧 محاكاة الاتزان الانتقالي ومخطط الجسم الحر</h3><span style="font-size:12px;color:#607887">نموذج تفاعلي متحرك</span></div><div class="scene"><canvas id="scene" width="780" height="500" aria-label="رسم تفاعلي لاتزان القوى"></canvas></div><div class="scene-note">الأسهم تمثل قوى الشد في الحبال ووزن الجسم، وتتفاعل حركياً مع تغيير القيم.</div><div class="readouts"><div class="metric"><span>الشد في الحبل الأول T₁</span><strong id="t1">0.00 N</strong><small>مائل بزاوية θ</small></div><div class="metric"><span>الشد في الحبل الأفقي T₂</span><strong id="t2">0.00 N</strong><small>أو الكابل الثاني المعاكس</small></div><div class="metric"><span>محصلة القوى أفقياً ΣFₓ</span><strong id="sumFx">0.00 N</strong><small>T₁ cos(θ) - T₂ = 0</small></div><div class="metric"><span>محصلة القوى رأسياً ΣFᵧ</span><strong id="sumFy">0.00 N</strong><small>T₁ sin(θ) - W = 0</small></div></div></section>
+<div class="layout"><section class="panel"><div class="panel-head"><h3>🔧 محاكاة الاتزان الانتقالي ومخطط الجسم الحر</h3><span style="font-size:12px;color:#607887">نموذج تفاعلي متحرك</span></div><div class="scene"><canvas id="scene" width="780" height="500" aria-label="رسم تفاعلي لاتزان القوى"></canvas></div><div class="scene-note">الأسهم تمثل قوى الشد في الحبال ووزن الجسم، وتتفاعل حركياً بشكل مستمر.</div><div class="readouts"><div class="metric"><span>الشد في الحبل الأول T₁</span><strong id="t1">0.00 N</strong><small>مائل بزاوية θ</small></div><div class="metric"><span>الشد في الحبل الأفقي T₂</span><strong id="t2">0.00 N</strong><small>أو الكابل الثاني المعاكس</small></div><div class="metric"><span>محصلة القوى أفقياً ΣFₓ</span><strong id="sumFx">0.00 N</strong><small>T₁ cos(θ) - T₂ = 0</small></div><div class="metric"><span>محصلة القوى رأسياً ΣFᵧ</span><strong id="sumFy">0.00 N</strong><small>T₁ sin(θ) - W = 0</small></div></div></section>
 <aside class="panel"><div class="panel-head"><h3>لوحة التحكم</h3><span>غيّر القيم واستمتع بالتفاعل</span></div><div class="controls">
 <div class="control"><label for="mass">كتلة الجسم المعلق m <output id="massVal">10 kg</output></label><input id="mass" type="range" min="2" max="30" step="1" value="10"></div>
 <div class="control"><label for="theta">زاوية ميل الحبل الأول θ <output id="thetaVal">30°</output></label><input id="theta" type="range" min="15" max="75" step="1" value="30"></div>
 <div class="control"><label for="systemType">نوع نظام التعليق</label><select id="systemType"><option value="horizontal">حبل مائل + حبل أفقي (جدار)</option><option value="dual">كابلان مائلان متماثلان</option></select></div>
 <div class="buttons"><button class="btn" id="example">📋 مثال الكتاب المدرسي</button><button class="btn secondary" id="reset">↺ إعادة الضبط</button></div>
-<div class="tip">حرك مؤشر الزاوية أو الكتلة وشاهد كيف يرتجف أو يتكيف النظام الفيزيائي للحفاظ على الاتزان لحظياً!</div></div></aside></div>
+<div class="tip">حرك مؤشر الزاوية أو الكتلة وشاهد الحركة التفاعلية المستمرة للنظام الفيزيائي!</div></div></aside></div>
 <div class="below"><section class="panel content"><h3>📘 الفكرة والقوانين</h3><p><b>شرطا الاتزان الانتقالي:</b> لكي يكون الجسم متزناً سكونياً، يجب أن تنعدم محصلة القوى المؤثرة عليه في جميع الاتجاهات:</p><div class="formula">ΣFₓ = 0   ,   ΣFᵧ = 0</div><ul><li><b>الوزن (W):</b> أسفل ويساوي $m \times g$ (حيث $g \approx 9.8 \text{ m/s}^2$).</li><li><b>التحليل المتعامد:</b> يتم تحليل قوة الشد المائلة $T_1$ إلى مركبة أفقية $T_1\cos\theta$ ورأسية $T_1\sin\theta$.</li></ul><div class="good">في نظام حبل مائل وحبل أفقي: $T_2 = T_1\cos\theta$ و $T_1\sin\theta = W$.</div></section><section class="panel content"><h3>🧠 اكتشف بنفسك</h3><ol><li>زود كتلة الجسم: تلاحظ زيادة الشد في كلا الحبلين للحفاظ على الاتزان.</li><li>صغر زاوية الميل θ: يرتفع الشد المطلوب في الحبل المائل بشكل كبير جداً لأن مركبته الرأسية تصبح أصغر وتحتاج لقوة أكبر.</li><li>جرب نظام الكابلين المائلين: يتوزع الحمل بالتساوي إذا كانت الزوايا متماثلة.</li></ol><div class="tip">كلما اقتربت زاوية الحبل من الصفر (أصبح شبه أفقي)، احتاج شداً هائلاً لرفع الأجسام رأسياً!</div></div></section></div>
 <footer>مختبر الفيزياء التفاعلي · الدرس 1-5 اتزان القوى</footer></main>
 <script>
@@ -19,7 +19,7 @@
 const $=id=>document.getElementById(id),canvas=$('scene'),ctx=canvas.getContext('2d');
 const state={m:10,theta:30,type:'horizontal'};
 const g=9.8;
-let animPhase=0; // متغير لإضافة تأثير التفاعل والنبض البصري
+let animPhase=0;
 
 function compute(){
   const W=state.m*g, rad=state.theta*Math.PI/180;
@@ -41,7 +41,7 @@ function compute(){
   $('sumFy').textContent=Math.abs(sumFy)<0.01?'0.00 N':sumFy.toFixed(2)+' N';
   $('massVal').textContent=state.m+' kg';
   $('thetaVal').textContent=state.theta+'°';
-  draw(t1,t2,W);
+  return {t1, t2, W};
 }
 
 function arrow(x1,y1,x2,y2,color,width=4){
@@ -54,22 +54,21 @@ function arrow(x1,y1,x2,y2,color,width=4){
   ctx.closePath();ctx.fill();
 }
 
-function draw(t1,t2,W){
+function draw(){
+  const {t1, t2, W}=compute();
   const w=780,h=500;ctx.clearRect(0,0,w,h);
-  // Background grid
+  
   ctx.fillStyle='#f3f9fb';ctx.fillRect(0,0,w,h);
   ctx.strokeStyle='#d7e7e9';ctx.lineWidth=1;
   for(let x=40;x<w;x+=35){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
   for(let y=40;y<h;y+=35){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
 
-  // Wall and ceiling support
   ctx.fillStyle='#536f7b';ctx.fillRect(100,60,30,280);
   ctx.strokeStyle='#354f5b';ctx.lineWidth=3;ctx.strokeRect(100,60,30,280);
 
-  // إضافة تفاعل حركي طفيف (نبض بصري عند التغيير)
-  animPhase+=0.08;
-  const floatY = Math.sin(animPhase)*2;
-
+  // حلقة حركة مستمرة تفاعلية
+  animPhase+=0.04;
+  const floatY = Math.sin(animPhase)*3;
   const cx=380,cy=240 + floatY; 
   
   if(state.type==='horizontal'){
@@ -83,19 +82,15 @@ function draw(t1,t2,W){
     ctx.fillStyle='#536f7b';ctx.fillRect(135,80,30,20);ctx.fillRect(595,80,30,20);
   }
 
-  // Vertical cord to mass
   ctx.strokeStyle='#087fa5';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx,cy+120);ctx.stroke();
 
-  // Mass block
   ctx.fillStyle='#b9783d';ctx.fillRect(cx-45,cy+120,90,70);
   ctx.strokeStyle='#75451f';ctx.lineWidth=3;ctx.strokeRect(cx-45,cy+120,90,70);
   ctx.fillStyle='#fff';ctx.font='bold 16px Tahoma';ctx.textAlign='center';ctx.fillText(state.m+' kg',cx,cy+162);
 
-  // Knot ring
   ctx.fillStyle='#d18a42';ctx.beginPath();ctx.arc(cx,cy,10,0,Math.PI*2);ctx.fill();
   ctx.strokeStyle='#183447';ctx.lineWidth=2;ctx.stroke();
 
-  // Draw force vectors on knot
   arrow(cx,cy+10,cx,cy+95,'#dc5c4d',5);
   ctx.fillStyle='#dc5c4d';ctx.font='bold 15px Tahoma';ctx.textAlign='right';ctx.fillText('W = '+(W).toFixed(1)+' N',cx-10,cy+60);
 
@@ -115,15 +110,18 @@ function draw(t1,t2,W){
     arrow(cx,cy,cx+50,cy-60,'#23865b',5);
     ctx.fillStyle='#23865b';ctx.textAlign='center';ctx.fillText('T₁ = T₂ = '+t1.toFixed(1)+' N',cx,cy-75);
   }
+  
+  requestAnimationFrame(draw);
 }
 
-$('mass').addEventListener('input',e=>{state.m=Number(e.target.value);compute();});
-$('theta').addEventListener('input',e=>{state.theta=Number(e.target.value);compute();});
-$('systemType').addEventListener('change',e=>{state.type=e.target.value;compute();});
-$('reset').addEventListener('click',()=>{state.m=10;state.theta=30;state.type='horizontal';$('mass').value=10;$('theta').value=30;$('systemType').value='horizontal';compute();});
-$('example').addEventListener('click',()=>{state.m=20;state.theta=45;state.type='horizontal';$('mass').value=20;$('theta').value=45;$('systemType').value='horizontal';compute();});
+$('mass').addEventListener('input',e=>{state.m=Number(e.target.value);});
+$('theta').addEventListener('input',e=>{state.theta=Number(e.target.value);});
+$('systemType').addEventListener('change',e=>{state.type=e.target.value;});
+$('reset').addEventListener('click',()=>{state.m=10;state.theta=30;state.type='horizontal';$('mass').value=10;$('theta').value=30;$('systemType').value='horizontal';});
+$('example').addEventListener('click',()=>{state.m=20;state.theta=45;state.type='horizontal';$('mass').value=20;$('theta').value=45;$('systemType').value='horizontal';});
 
-compute();
+// بدء حلقة الرسم المستمرة
+requestAnimationFrame(draw);
 })();
 </script>
 </body></html>
