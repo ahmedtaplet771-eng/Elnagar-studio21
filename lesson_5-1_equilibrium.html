@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>معمل اتزان القوى | مختبر الفيزياء التفاعلي</title>
+<style>
+:root{--ink:#183447;--muted:#627987;--blue:#087fa5;--cyan:#19a9bd;--line:#d7e3e8;--paper:#fff;--bg:#edf4f5;--gold:#e9a52d;--red:#dc5c4d;--green:#218b68}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0,#fff 0,#f2f7f6 45%,#e5eef1 100%);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}header{background:#ffffffdc;border-bottom:1px solid var(--line);padding:18px clamp(14px,4vw,54px);position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}.top{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#087fa5,#55c1c6);display:grid;place-items:center;color:white;font-size:25px}.brand h1{font-size:clamp(18px,2.4vw,26px);margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:13px}.back{color:var(--blue);text-decoration:none;font-weight:bold;border:1px solid #b9d8e0;padding:9px 13px;border-radius:10px;background:#fff}main{max-width:1400px;margin:auto;padding:22px clamp(12px,3vw,40px) 55px}.hero{display:flex;justify-content:space-between;gap:18px;align-items:end;flex-wrap:wrap;margin-bottom:18px}.eyebrow{color:var(--blue);font-size:13px;font-weight:bold}.hero h2{font-size:clamp(23px,3vw,34px);margin:5px 0}.hero p{color:var(--muted);margin:0;line-height:1.8}.pill{background:#e4f4f3;border:1px solid #c5e6e0;color:#176c61;border-radius:30px;padding:8px 13px;font-size:13px;font-weight:bold}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(290px,.85fr);gap:18px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 32px #24485a0d;overflow:hidden}.panel-head{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-head h3{margin:0;font-size:17px}.hint{font-size:12px;color:var(--muted)}canvas{display:block;width:100%;height:auto;aspect-ratio:1000/540;background:#eaf3f4}.canvas-foot{padding:11px 16px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);line-height:1.7}.controls{padding:17px}.control{margin-bottom:18px}.control-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px;font-size:14px;font-weight:bold}.value{color:var(--blue);font-variant-numeric:tabular-nums;background:#eaf5f7;border-radius:8px;padding:5px 9px;min-width:65px;text-align:center}input[type=range]{width:100%;accent-color:var(--blue);cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:#82939c;font-size:11px;margin-top:3px}.buttons{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:10px 13px;background:var(--blue);color:white;font-weight:bold;cursor:pointer;font-family:inherit}.btn.secondary{background:#edf4f6;color:#365565;border:1px solid var(--line)}.btn:active{transform:translateY(1px)}.results{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;padding:14px 17px;background:#f7fafb;border-top:1px solid var(--line)}.metric{background:white;border:1px solid var(--line);border-radius:12px;padding:11px}.metric small{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;margin-top:5px;font-size:20px;color:#126f8d;font-variant-numeric:tabular-nums}.status{margin:0 17px 16px;border-radius:11px;padding:11px 13px;background:#e8f6ef;color:#176b4d;font-size:13px;font-weight:bold;line-height:1.7}.below{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.content{padding:17px 19px;line-height:1.9}.content h3{margin:0 0 10px;font-size:18px}.equation{direction:ltr;text-align:center;background:#f0f7f8;border:1px solid #d9e9ec;border-radius:12px;padding:13px;margin:10px 0;font-size:19px;font-weight:bold;color:#155d75}.steps{padding-right:20px;margin:8px 0}.steps li{margin:7px 0}.quiz-q{font-weight:bold;margin:0 0 12px}.choice{display:block;width:100%;text-align:right;margin:7px 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);font-family:inherit;cursor:pointer}.choice:hover{border-color:var(--blue);background:#f2fafb}.feedback{min-height:24px;color:var(--green);font-weight:bold;font-size:13px;margin-top:10px}.legend{display:flex;gap:15px;flex-wrap:wrap;padding:0 17px 13px;font-size:12px;color:var(--muted)}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-left:5px}.footer{text-align:center;color:#82939c;font-size:12px;margin-top:24px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.below{grid-template-columns:1fr}}@media(max-width:520px){header{position:static}.results{grid-template-columns:1fr 1fr}.panel-head{align-items:flex-start;flex-direction:column}.content{padding:15px}}
+</style></head>
+<body>
+<header><div class="top"><div class="brand"><div class="logo">⚖</div><div><h1>مختبر الفيزياء التفاعلي</h1><p>البكالوريا المصرية · الصف الثاني الثانوي</p></div></div><a class="back" href="index.html">← قائمة الدروس</a></div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">الدرس 5-1 · القوى والاتزان</div><h2>اتزان القوى</h2><p>هل تستطيع تعليق لافتة ثقيلة بكابلين مائلين؟ غيّر الزوايا والكتلة، وراقب كيف تتوزع قوى الشد حتى تظل اللافتة ساكنة.</p></div><span class="pill">محاكاة تفاعلية · نموذج مثالي</span></section>
+<div class="layout">
+<section class="panel"><div class="panel-head"><h3>مشهد التجربة: لافتة معلّقة بكابلين</h3><span class="hint">اسحب المؤشرات لتغيير ظروف الاتزان</span></div><canvas id="scene" width="1000" height="540" aria-label="محاكاة لافتة معلقة بكابلين مع متجهات القوى"></canvas><div class="legend"><span><i class="dot" style="background:#dc5c4d"></i>الوزن W</span><span><i class="dot" style="background:#087fa5"></i>الشد T₁ و T₂</span><span><i class="dot" style="background:#218b68"></i>المحصلة</span></div><div class="canvas-foot">الأسهم مرسومة من نقطة تأثير القوى على اللافتة. أطوال الأسهم توضيحية، بينما القيم العددية محسوبة من معادلات الاتزان.</div></section>
+<aside class="panel"><div class="panel-head"><h3>لوحة التحكم</h3><span class="hint">غيّر القيم وشاهد النتيجة فورًا</span></div><div class="controls">
+<div class="control"><div class="control-top"><label for="mass">كتلة اللافتة</label><span class="value" id="massV">8.0 kg</span></div><input id="mass" type="range" min="2" max="20" step="0.5" value="8"><div class="range-labels"><span>2 kg</span><span>20 kg</span></div></div>
+<div class="control"><div class="control-top"><label for="left">زاوية الكابل الأيسر مع الأفقي</label><span class="value" id="leftV">30°</span></div><input id="left" type="range" min="20" max="75" step="1" value="30"><div class="range-labels"><span>20°</span><span>75°</span></div></div>
+<div class="control"><div class="control-top"><label for="right">زاوية الكابل الأيمن مع الأفقي</label><span class="value" id="rightV">55°</span></div><input id="right" type="range" min="20" max="75" step="1" value="55"><div class="range-labels"><span>20°</span><span>75°</span></div></div>
+<div class="buttons"><button class="btn" id="reset">إعادة الضبط</button><button class="btn secondary" id="example">مثال الكتاب: 6 kg و 30°</button></div>
+</div><div class="results"><div class="metric"><small>وزن اللافتة W</small><strong id="weight">78.4 N</strong></div><div class="metric"><small>شد الكابل الأيسر T₁</small><strong id="t1">—</strong></div><div class="metric"><small>شد الكابل الأيمن T₂</small><strong id="t2">—</strong></div><div class="metric"><small>محصلة القوى |ΣF|</small><strong id="net">0.00 N</strong></div></div><div class="status" id="status">✓ الجسم في حالة اتزان انتقالي؛ محصلة القوى تساوي صفرًا.</div></aside>
+</div>
+<div class="below">
+<section class="panel"><div class="content"><h3>افهم الفيزياء وراء المشهد</h3><p>تظل اللافتة ساكنة عندما تتزن القوى المؤثرة عليها. مركبتا الشد الأفقيتان تتساويان مقدارًا وتتعاكسان اتجاهًا، ومجموع المركبتين الرأسيتين لأعلى يساوي وزن اللافتة.</p><div class="equation">ΣFₓ = 0 &nbsp;&nbsp; and &nbsp;&nbsp; ΣFᵧ = 0</div><ol class="steps"><li>الوزن: <b>W = mg</b> ويتجه لأسفل.</li><li>أفقيًا: <b>T₁ cos θ₁ = T₂ cos θ₂</b>.</li><li>رأسيًا: <b>T₁ sin θ₁ + T₂ sin θ₂ = mg</b>.</li></ol><div class="equation">T₁ = mg cos θ₂ / sin(θ₁ + θ₂)<br>T₂ = mg cos θ₁ / sin(θ₁ + θ₂)</div><p style="color:var(--muted);font-size:13px">حيث تقاس الزاويتان من الاتجاه الأفقي، و g = 9.8 m/s². النموذج يفترض كابلين خفيفين ولافتة ساكنة.</p></div></section>
+<section class="panel"><div class="content"><h3>اختبر فهمك</h3><p class="quiz-q">إذا زادت زاوية الكابلين مع الأفقي مع ثبات وزن اللافتة، فماذا يحدث لشد كل كابل عندما تكون الزاويتان متماثلتين؟</p><button class="choice" data-c="a">يزداد الشد؛ لأن الكابل أصبح أقرب إلى الأفقي.</button><button class="choice" data-c="b">يقل الشد؛ لأن المركبة الرأسية لكل شد تصبح أكبر نسبةً إلى الشد.</button><button class="choice" data-c="c">لا يتغير الشد مطلقًا.</button><div class="feedback" id="feedback" aria-live="polite"></div></div></section>
+</div>
+<div class="footer">مختبر الفيزياء التفاعلي · الدرس 5-1: اتزان القوى</div>
+</main>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id), canvas=$('scene'),ctx=canvas.getContext('2d');
+const rad=d=>d*Math.PI/180, fmt=n=>Number(n).toFixed(1);
+function roundRect(c,x,y,w,h,r,fill,stroke){c.beginPath();c.roundRect(x,y,w,h,r);if(fill){c.fillStyle=fill;c.fill()}if(stroke){c.strokeStyle=stroke;c.lineWidth=2;c.stroke()}}
+function arrow(c,x1,y1,x2,y2,color,label){const dx=x2-x1,dy=y2-y1,a=Math.atan2(dy,dx),head=13;c.save();c.strokeStyle=color;c.fillStyle=color;c.lineWidth=7;c.lineCap='round';c.beginPath();c.moveTo(x1,y1);c.lineTo(x2-head*Math.cos(a),y2-head*Math.sin(a));c.stroke();c.beginPath();c.moveTo(x2,y2);c.lineTo(x2-head*Math.cos(a-.48),y2-head*Math.sin(a-.48));c.lineTo(x2-head*Math.cos(a+.48),y2-head*Math.sin(a+.48));c.closePath();c.fill();c.font='bold 22px Tahoma';c.textAlign='center';c.direction='ltr';c.fillText(label,(x1+x2)/2+14,(y1+y2)/2-13);c.restore()}
+function draw(){const m=+$('mass').value,a=+$('left').value,b=+$('right').value,g=9.8,W=m*g,A=rad(a),B=rad(b),den=Math.sin(A+B);const T1=W*Math.cos(B)/den,T2=W*Math.cos(A)/den;
+$('massV').textContent=fmt(m)+' kg';$('leftV').textContent=a+'°';$('rightV').textContent=b+'°';$('weight').textContent=fmt(W)+' N';$('t1').textContent=fmt(T1)+' N';$('t2').textContent=fmt(T2)+' N';$('net').textContent='0.00 N';
+const c=ctx,w=canvas.width,h=canvas.height;c.clearRect(0,0,w,h);
+let bg=c.createLinearGradient(0,0,0,h);bg.addColorStop(0,'#eaf5f7');bg.addColorStop(.68,'#f8f7f0');bg.addColorStop(1,'#e8eee8');c.fillStyle=bg;c.fillRect(0,0,w,h);
+// laboratory wall panels
+c.strokeStyle='#d3e1e3';c.lineWidth=2;for(let x=40;x<w;x+=120){c.beginPath();c.moveTo(x,0);c.lineTo(x,360);c.stroke()}c.fillStyle='#dce7e6';c.fillRect(0,355,w,15);c.fillStyle='#b7c8c2';c.fillRect(0,370,w,170);
+// overhead beam
+const beam=c.createLinearGradient(0,35,0,90);beam.addColorStop(0,'#647d87');beam.addColorStop(1,'#344f5b');roundRect(c,95,55,810,38,10,beam,'#304c59');
+const cx=500,cy=320,anchorY=162,verticalGap=cy-18-anchorY,anchorL=cx-verticalGap/Math.tan(A),anchorR=cx+verticalGap/Math.tan(B);
+c.strokeStyle='#526d76';c.lineWidth=9;c.beginPath();c.moveTo(anchorL,93);c.lineTo(anchorL,anchorY);c.moveTo(anchorR,93);c.lineTo(anchorR,anchorY);c.stroke();
+// cables, angles affect cable endpoints geometrically while fixed anchor x remains
+c.lineWidth=10;c.lineCap='round';const cableGrad=c.createLinearGradient(0,100,0,320);cableGrad.addColorStop(0,'#6d7e83');cableGrad.addColorStop(1,'#c0c9c8');c.strokeStyle=cableGrad;c.beginPath();c.moveTo(anchorL,anchorY);c.lineTo(cx,cy-18);c.lineTo(anchorR,anchorY);c.stroke();
+// anchor plates
+for(const x of [anchorL,anchorR]){roundRect(c,x-18,145,36,34,7,'#81969d','#425c66');c.fillStyle='#eaf1f2';c.beginPath();c.arc(x,162,5,0,Math.PI*2);c.fill()}
+// sign body with polished wood
+const wood=c.createLinearGradient(0,cy-10,0,cy+112);wood.addColorStop(0,'#c88a4b');wood.addColorStop(.5,'#9d6030');wood.addColorStop(1,'#75421f');roundRect(c,cx-185,cy-15,370,125,15,wood,'#603b23');
+// sign border details
+c.strokeStyle='#e4b77a';c.lineWidth=3;roundRect(c,cx-174,cy-5,348,105,10,null,'#e4b77a');c.fillStyle='#fff0d4';c.font='bold 35px Tahoma';c.textAlign='center';c.direction='rtl';c.fillText('لافتة المتجر',cx,cy+47);c.font='18px Tahoma';c.fillStyle='#f9dfb8';c.fillText('جسم في حالة اتزان',cx,cy+78);
+// hanging loops
+for(const x of [cx-130,cx+130]){c.strokeStyle='#e4c38d';c.lineWidth=6;c.beginPath();c.arc(x,cy-15,11,0,Math.PI*2);c.stroke()}
+// vectors: normalize to fit canvas, show components accurately
+const scale=1.05, originY=cy+45;const Lx=-T1*Math.cos(A)*scale,Ly=-T1*Math.sin(A)*scale,Rx=T2*Math.cos(B)*scale,Ry=-T2*Math.sin(B)*scale;
+arrow(c,cx,originY,cx+Lx,originY+Ly,'#087fa5','T₁');arrow(c,cx,originY,cx+Rx,originY+Ry,'#087fa5','T₂');arrow(c,cx,originY,cx,originY+Math.min(150,W*scale),'#dc5c4d','W');
+// force balance indicator
+roundRect(c,28,25,255,45,12,'#ffffffdf','#d1e1e4');c.fillStyle='#176c61';c.font='bold 18px Tahoma';c.textAlign='center';c.direction='rtl';c.fillText('ΣFₓ = 0   ·   ΣFᵧ = 0',155,54);
+// angle labels
+c.fillStyle='#345b6a';c.font='bold 18px Tahoma';c.direction='ltr';c.textAlign='center';c.fillText(a+'°',anchorL+68,anchorY+35);c.fillText(b+'°',anchorR-68,anchorY+35);
+// vector key / callout
+c.font='15px Tahoma';c.direction='rtl';c.textAlign='right';c.fillStyle='#536c76';c.fillText('زاوية كل كابل مقاسة من الأفقي',w-28,h-24);
+}
+['mass','left','right'].forEach(id=>$(id).addEventListener('input',draw));
+$('reset').addEventListener('click',()=>{$('mass').value=8;$('left').value=30;$('right').value=55;draw()});
+$('example').addEventListener('click',()=>{$('mass').value=6;$('left').value=30;$('right').value=30;draw()});
+document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{$('feedback').textContent=btn.dataset.c==='b'?'إجابة صحيحة! عند زيادة الزاوية من الأفقي تزداد المركبة الرأسية لنفس مقدار الشد، لذلك نحتاج شدًا أقل.':'ليست هذه الإجابة. تذكّر أن المركبة الرأسية للشد تساوي T sin θ، وعند زيادة θ تزداد sin θ.';$('feedback').style.color=btn.dataset.c==='b'?'#218b68':'#b56a1d'}));
+draw();
+})();
+</script>
+</body></html>
