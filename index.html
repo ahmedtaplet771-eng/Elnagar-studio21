@@ -135,41 +135,41 @@ button.secondary{background:#edf4f5;color:#28596a;border:1px solid #d4e3e7}
     <div class="footer">منشئ الموقع أحمد السيد غريب النجار · 01070328288</div>
   </div>
 
-  <!-- المعامل الفرعية -->
+  <!-- المعامل الفرعية بتصميم متكامل -->
   <div id="view-lesson1" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 1-1</div><h2>متجهات السرعة والسرعة النسبية</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene1" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>سرعة القارب</label><span class="value" id="boatOut1">4.0 m/s</span></div><input id="boat1" type="range" min="1" max="12" step="0.1" value="4"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 1-1</div><h2>متجهات السرعة والسرعة النسبية</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene1" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play1">▶ ابدأ العبور</button><button class="secondary" id="reset1">↺ إعادة</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>سرعة القارب</label><span class="value" id="boatOut1">4.0 m/s</span></div><input id="boat1" type="range" min="1" max="12" step="0.1" value="4"></div></div><div class="results"><div class="metric"><small>زمن العبور</small><strong id="cross1">15.0 s</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson2" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 2-1</div><h2>حركة المقذوفات الأفقية</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene2" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>السرعة</label><span class="value" id="vout2">8.0 m/s</span></div><input id="speed2" type="range" min="1" max="25" step=".5" value="8"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 2-1</div><h2>حركة المقذوفات الأفقية</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene2" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play2">▶ تشغيل</button><button class="secondary" id="reset2">↺ إعادة</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>السرعة</label><span class="value" id="vout2">8.0 m/s</span></div><input id="speed2" type="range" min="1" max="25" step=".5" value="8"></div></div><div class="results"><div class="metric"><small>المدى الأفقي</small><strong id="range2">16.1 m</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson3" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 3-1</div><h2>حركة المقذوفات بزاوية</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene3" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>الزاوية</label><span class="value" id="aout3">30°</span></div><input id="angle3" type="range" min="5" max="85" step="1" value="30"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 3-1</div><h2>حركة المقذوفات بزاوية</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene3" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play3">▶ تشغيل</button><button class="secondary" id="reset3">↺ إعادة</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>الزاوية</label><span class="value" id="aout3">30°</span></div><input id="angle3" type="range" min="5" max="85" step="1" value="30"></div></div><div class="results"><div class="metric"><small>أقصى ارتفاع</small><strong id="maxh3">4.9 m</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson4" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 4-1</div><h2>عزم القوة</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene4" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>القوة</label><span class="value" id="forceVal4">10 N</span></div><input id="force4" type="range" min="0" max="20" step="0.5" value="10"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 4-1</div><h2>عزم القوة</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene4" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="animate4">▶ ابدأ الدوران</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>القوة</label><span class="value" id="forceVal4">10 N</span></div><input id="force4" type="range" min="0" max="20" step="0.5" value="10"></div></div><div class="results"><div class="metric"><small>العزم</small><strong id="torque4">0.0 N·m</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson5" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 5-1</div><h2>اتزان القوى</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene5" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>الكتلة</label><span class="value" id="massV5">8.0 kg</span></div><input id="mass5" type="range" min="2" max="20" step="0.5" value="8"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 5-1</div><h2>اتزان القوى</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene5" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>الكتلة</label><span class="value" id="massV5">8.0 kg</span></div><input id="mass5" type="range" min="2" max="20" step="0.5" value="8"></div></div><div class="results"><div class="metric"><small>شد T1</small><strong id="t1_5">--</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson6" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 6-1</div><h2>القدرة والكفاءة</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene6" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>القدرة</label><span class="value" id="inputV6">1000 W</span></div><input id="input6" type="range" min="100" max="2000" step="10" value="1000"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 6-1</div><h2>القدرة والكفاءة</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene6" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play6">▶ تشغيل</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>القدرة</label><span class="value" id="inputV6">1000 W</span></div><input id="input6" type="range" min="100" max="2000" step="10" value="1000"></div></div><div class="results"><div class="metric"><small>الكفاءة</small><strong id="eff6">—</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson10" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 10-1</div><h2>الحركة الدائرية المنتظمة والقوة المركزية</h2></div><span class="pill">محاكاة</span></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 10-1</div><h2>الحركة الدائرية المنتظمة والقوة المركزية</h2></div><span class="pill">محاكاة تفاعلية</span></div>
     <div class="layout">
-      <section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene10" width="1000" height="450"></canvas></section>
+      <section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene10" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play10">▶ ابدأ</button><button class="secondary" id="pause10">Ⅱ إيقاف</button></div></section>
       <aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls">
         <div class="control"><div class="control-top"><label>كتلة الكرة</label><span class="value" id="mV10"></span></div><input id="m10" type="range" min="0.1" max="5" step="0.05" value="0.5"></div>
       </div><div class="results"><div class="metric"><small>القوة المركزية Fc</small><strong id="r4-10">—</strong></div></div><div class="status" id="status10"></div></aside>
@@ -177,13 +177,13 @@ button.secondary{background:#edf4f5;color:#28596a;border:1px solid #d4e3e7}
   </div>
 
   <div id="view-lesson11" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 11-1</div><h2>الحركة الدائرية: الأفقية والرأسية</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene11" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>الكتلة</label><span class="value" id="mV11"></span></div><input id="m11" type="range" min="0.1" max="2" step="0.05" value="0.5"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 11-1</div><h2>الحركة الدائرية: الأفقية والرأسية</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene11" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play11">▶ ابدأ</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>الكتلة</label><span class="value" id="mV11"></span></div><input id="m11" type="range" min="0.1" max="2" step="0.05" value="0.5"></div></div><div class="results"><div class="metric"><small>الشد</small><strong id="r1-11">—</strong></div></div></aside></div>
   </div>
 
   <div id="view-lesson12" class="view">
-    <div class="hero"><div><div class="eyebrow">الدرس 12-1</div><h2>قوانين كبلر والجاذبية الكونية</h2></div><span class="pill">محاكاة</span></div>
-    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene12" width="1000" height="450"></canvas></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>المحور الأكبر</label><span class="value" id="aV12"></span></div><input id="a12" type="range" min="0.8" max="6" step="0.05" value="2"></div></div></aside></div>
+    <div class="hero"><div><div class="eyebrow">الدرس 12-1</div><h2>قوانين كبلر والجاذبية الكونية</h2></div><span class="pill">محاكاة تفاعلية</span></div>
+    <div class="layout"><section class="panel"><div class="panel-head"><h3>مشهد المعمل</h3></div><canvas id="scene12" width="1000" height="450"></canvas><div class="buttons" style="padding:12px"><button id="play12">▶ ابدأ</button></div></section><aside class="panel"><div class="panel-head"><h3>التحكم</h3></div><div class="controls"><div class="control"><div class="control-top"><label>المحور الأكبر</label><span class="value" id="aV12"></span></div><input id="a12" type="range" min="0.8" max="6" step="0.05" value="2"></div></div><div class="results"><div class="metric"><small>الزمن الدوري</small><strong id="r1-12">—</strong></div></div></aside></div>
   </div>
 </main>
 
@@ -195,11 +195,11 @@ function switchView(viewId) {
   document.getElementById('headerTitle').textContent = viewId === 'home' ? 'مختبر الفيزياء التفاعلي' : 'مختبر الفيزياء التفاعلي · البكالوريا المصرية';
 }
 
-// رسم تجربة الحركة الدائرية (كمثال تفاعلي حي داخل الملف)
+// تشغيل تجربة الحركة الدائرية كنموذج تفاعلي نشط
 const cv10 = document.getElementById('scene10');
 if(cv10) {
   const ctx = cv10.getContext('2d');
-  let th = 0;
+  let th = 0, running = true;
   function draw10() {
     ctx.clearRect(0, 0, 1000, 450);
     ctx.fillStyle = '#eaf3f4'; ctx.fillRect(0, 0, 1000, 450);
@@ -208,7 +208,7 @@ if(cv10) {
     let F = m * w * w * r;
     document.getElementById('mV10').textContent = m.toFixed(2) + ' kg';
     document.getElementById('r4-10').textContent = F.toFixed(2) + ' N';
-    document.getElementById('status10').textContent = `القوة المركزية = ${F.toFixed(2)} N`;
+    document.getElementById('status10').textContent = `القوة المركزية نحو المركز = ${F.toFixed(2)} N`;
     
     let cx = 500, cy = 225, Rpx = 120;
     ctx.strokeStyle = '#8fa9b0'; ctx.lineWidth = 3; ctx.setLineDash([8,8]);
@@ -216,9 +216,11 @@ if(cv10) {
     
     let x = cx + Rpx * Math.cos(th), y = cy - Rpx * Math.sin(th);
     ctx.fillStyle = '#1687a5'; ctx.beginPath(); ctx.arc(x, y, 14, 0, Math.PI*2); ctx.fill();
-    th += 0.05;
+    if(running) th += 0.05;
     requestAnimationFrame(draw10);
   }
+  document.getElementById('play10').onclick = () => running = true;
+  document.getElementById('pause10').onclick = () => running = false;
   draw10();
 }
 </script>
