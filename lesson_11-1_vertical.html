@@ -3,97 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elnagar Studio 21 - المختبر الفيزيائي التفاعلي</title>
+<title>الحركة الدائرية: الأفقية والرأسية | مختبر الفيزياء التفاعلي</title>
 <style>
-:root{--ink:#0f172a;--muted:#475569;--blue:#0284c7;--line:#cbd5e1}
+:root{--ink:#183447;--muted:#617987;--blue:#087fa5;--line:#d7e3e8}
 *{box-sizing:border-box}
-body{margin:0;background:#030712;font-family:Tahoma,Arial;color:#f8fafc}
-header{padding:14px 24px;background:#0f172abf;border-bottom:1px solid #1e293b;position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
-.top{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-h1{font-size:clamp(17px,2.2vw,24px);margin:0;color:#38bdf8}
-.back{text-decoration:none;color:#38bdf8;border:1px solid #334155;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:bold}
-main{max-width:1400px;margin:auto;padding:20px}
-.layout{display:grid;grid-template-columns:1fr 340px;gap:20px}
-.panel{background:#1e293b;border:1px solid #334155;border-radius:16px;overflow:hidden;box-shadow:0 20px 25px -5px rgba(0,0,0,0.5)}
-.panel-head{padding:14px 18px;border-bottom:1px solid #334155;display:flex;justify-content:space-between;align-items:center}
-.panel-head h3{margin:0;font-size:16px;color:#e2e8f0}
+body{margin:0;background:radial-gradient(ellipse at 20% 0,#fff,#eef5f5 55%,#e4eef1);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}
+header{padding:16px clamp(14px,4vw,50px);background:#ffffffdf;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+.top{max-width:1350px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font-size:clamp(18px,2.5vw,27px);margin:0;color:var(--ink)}
+.back{text-decoration:none;color:var(--blue);border:1px solid #b9d8e0;border-radius:10px;padding:9px 13px;font-weight:bold;transition:0.2s}
+.back:hover{background:#eef7f8}
+main{max-width:1350px;margin:auto;padding:22px clamp(12px,3vw,38px) 50px}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.hero h2{font-size:clamp(23px,3vw,34px);margin:5px 0}
+.hero p{color:var(--muted);line-height:1.8;margin:0;max-width:800px}
+.eyebrow{color:var(--blue);font-weight:bold;font-size:13px}
+.pill{background:#e4f3f5;border:1px solid #c6e1e6;color:#17617a;border-radius:30px;padding:8px 13px;font-size:13px;font-weight:bold}
+.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(290px,.8fr);gap:17px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 9px 28px #24485a0c}
+.panel-head{padding:15px 18px;border-bottom:1px solid #e8eff1;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.panel-head h3{margin:0;font-size:18px}
+.hint{font-size:12px;color:var(--muted)}
 canvas{display:block;width:100%;height:auto;background:#020617}
-.controls{padding:16px}
-.control{margin-bottom:16px}
-.control-top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;font-weight:bold;color:#cbd5e1}
-.value{color:#38bdf8;direction:ltr}
-input[type=range]{width:100%;accent-color:#38bdf8}
-select{width:100%;padding:10px;border:1px solid #475569;border-radius:8px;background:#0f172a;color:#f8fafc;font-family:inherit}
-.buttons{display:flex;gap:8px}
-button{flex:1;font-family:inherit;cursor:pointer;border:0;border-radius:8px;padding:10px;background:#0284c7;color:#fff;font-weight:bold;transition:0.2s}
+.controls{padding:16px 18px}
+.control{margin-bottom:19px}
+.control-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px;font-weight:bold;font-size:14px}
+.value{color:var(--blue);direction:ltr}
+input[type=range]{width:100%;accent-color:#087fa5}
+select{width:100%;padding:11px;border:1px solid #d4e3e7;border-radius:10px;background:#f8fbfc;font-family:inherit;color:#183447;font-weight:bold}
+.range-labels{display:flex;justify-content:space-between;color:#82939c;font-size:11px;margin-top:4px}
+.buttons{display:flex;gap:8px;flex-wrap:wrap}
+button{font-family:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 13px;background:#087fa5;color:#fff;font-weight:bold;transition:0.2s}
 button:hover{opacity:0.9}
-button.secondary{background:#334155;color:#cbd5e1}
-.results{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 16px}
-.metric{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:10px}
-.metric small{display:block;color:#94a3b8;font-size:11px;margin-bottom:4px}
-.metric strong{font-size:16px;color:#38bdf8;direction:ltr;display:block}
-.status{margin:0 16px 16px;background:#064e3b;color:#34d399;border-radius:8px;padding:10px;font-size:12px;line-height:1.6;border:1px solid #065f46}
-@media(max-width:900px){.layout{grid-template-columns:1fr}}
+button.secondary{background:#edf4f5;color:#28596a;border:1px solid #d4e3e7}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16px 16px}
+.metric{background:#f2f7f8;border:1px solid #e1ebee;border-radius:12px;padding:12px}
+.metric small{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}
+.metric strong{font-size:18px;color:#155b73;direction:ltr;display:block}
+.status{margin:0 16px 16px;background:#eaf6f1;color:#20745a;border-radius:10px;padding:11px;font-size:13px;line-height:1.7}
+.below{display:grid;grid-template-columns:1.2fr .8fr;gap:17px;margin-top:17px}
+.content{padding:18px;line-height:1.9}
+.content h3{margin:0 0 9px;color:var(--ink)}
+.eq{background:#eef7f8;border:1px solid #d5e9ec;border-radius:12px;padding:13px;text-align:center;font-size:18px;font-weight:bold;color:#155b73;direction:ltr;margin:12px 0}
+.content p,.content li{font-size:14px;color:#2c4e61}
+.choice{display:block;width:100%;text-align:right;margin:8px 0;background:#f3f7f8;color:#25495b;border:1px solid #dce8eb;padding:10px;border-radius:8px;font-family:inherit;cursor:pointer}
+.choice:hover{background:#e7f0f3}
+.feedback{min-height:24px;color:#218b68;font-weight:bold;font-size:13px;margin-top:10px}
+.footer{text-align:center;color:#82939c;font-size:12px;margin-top:22px}
+@media(max-width:900px){.layout,.below{grid-template-columns:1fr}}
+@media(max-width:520px){header{position:static}.results{grid-template-columns:1fr 1fr}.panel-head{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
 <header>
     <div class="top">
-        <h1>⚛ Elnagar Studio 21 · محاكاة فيزيائية حقيقية متفاعلة</h1>
-        <a class="back" href="#">قائمة الدروس</a>
+        <h1>⚛ Elnagar Studio 21 · مختبر الفيزياء التفاعلي</h1>
+        <!-- تم تعديل الرابط ليرجع للصفحة الرئيسية index.html -->
+        <a class="back" href="index.html">← قائمة الدروس</a>
     </div>
 </header>
 <main>
+    <section class="hero">
+        <div>
+            <div class="eyebrow">الدرس 1-11 · الحركة الدائرية</div>
+            <h2>الحركة الدائرية: الأفقية والرأسية</h2>
+            <p>اختر النمط الفيزيائي: جسم يدور في دائرة رأسية، بندول مخروطي في دائرة أفقية، أو حركة جسم على السطح الداخلي لوعاء مخروطي أملس. شاهد كيف تتفاعل الكتلة، القوى والأسهم في الوقت الفعلي.</p>
+        </div>
+        <span class="pill">محاكاة تفاعلية · نموذج فيزيائي</span>
+    </section>
+
     <div class="layout">
         <section class="panel">
             <div class="panel-head">
-                <h3 id="sceneTitle">المشهد التفاعلي المباشر</h3>
-                <span style="font-size:12px;color:#94a3b8">تفاعل بصري فوري للكتلة والقوى</span>
+                <h3 id="sceneTitle">مشهد التجربة</h3>
+                <span class="hint">تفاعل مرئي دقيق للقوى والأبعاد</span>
             </div>
-            <canvas id="scene" width="1000" height="580"></canvas>
-            <div class="buttons" style="padding:12px 16px;border-top:1px solid #334155">
-                <button id="play">▶ ابدأ المحاكاة الحية</button>
-                <button class="secondary" id="pause">إيقاف مؤقت</button>
-                <span id="motionState" style="align-self:center;margin-right:auto;font-size:13px;color:#38bdf8">جاهز</span>
+            <canvas id="scene" width="1000" height="550"></canvas>
+            <div class="buttons" style="padding:12px 16px;border-top:1px solid #e8eff1">
+                <button id="play">▶ ابدأ الحركة</button>
+                <button class="secondary" id="pause">Ⅱ إيقاف مؤقت</button>
+                <a class="back" href="#lesson-details" style="margin-right:auto">↓ شرح الدرس والمعادلات</a>
+                <span class="hint" id="motionState" style="align-self:center">الحركة متوقفة — اضغط ابدأ الحركة</span>
             </div>
+            <div class="content" style="padding-top:8px;color:#607987;font-size:12px">الرسم توضيحي وتفاعلي؛ القيم محسوبة من المعادلات الفيزيائية مباشرة (g = 9.8 m/s²).</div>
         </section>
 
         <aside class="panel">
-            <div class="panel-head"><h3>لوحة التحكم والتحليل</h3></div>
+            <div class="panel-head">
+                <h3>لوحة التحكم</h3>
+                <span class="hint">تحكم مباشر</span>
+            </div>
             <div class="controls">
                 <div class="control">
-                    <div class="control-top"><label>اختر فكرة الدرس المدرسي</label></div>
+                    <div class="control-top"><label for="mode">التجربة / النموذج</label></div>
                     <select id="mode">
-                        <option value="vertical">1. الدائرة الرأسية (الشد والوزن والقمة/القاع)</option>
-                        <option value="conic">2. البندول المخروطي (دائرة أفقية)</option>
-                        <option value="bowl">3. الوعاء المخروطي الأملس (N.sinθ و N.cosθ)</option>
+                        <option value="vertical">1. دائرة رأسية (دلو / كرة على خيط)</option>
+                        <option value="conic">2. البندول المخروطي (دائرة أفقية بخيط)</option>
+                        <option value="bowl">3. وعاء مخروطي أملس (N.sinθ و N.cosθ)</option>
                     </select>
                 </div>
                 <div class="control">
-                    <div class="control-top"><label>كتلة الجسم (m) - تتغير حجماً ووزناً</label><span class="value" id="mV">0.50 kg</span></div>
-                    <input id="m" type="range" min="0.2" max="2.0" step="0.1" value="0.5">
+                    <div class="control-top"><label>الكتلة m (تتغير حجماً ووزناً)</label><span class="value" id="mV">0.50 kg</span></div>
+                    <input id="m" type="range" min="0.1" max="2.0" step="0.05" value="0.5">
+                    <div class="range-labels"><span>0.1 kg</span><span>2.0 kg</span></div>
                 </div>
                 <div class="control" id="ctrl-param">
-                    <div class="control-top"><label id="paramLabel">نصف القطر (r)</label><span class="value" id="paramV">1.0 m</span></div>
-                    <input id="param" type="range" min="0.5" max="2.0" step="0.1" value="1.0">
+                    <div class="control-top"><label id="paramLabel">نصف قطر الدائرة r</label><span class="value" id="paramV">0.80 m</span></div>
+                    <input id="param" type="range" min="0.3" max="2.0" step="0.05" value="0.8">
+                    <div class="range-labels"><span>0.3 m</span><span>2.0 m</span></div>
                 </div>
                 <div class="control" id="ctrl-th" style="display:none;">
-                    <div class="control-top"><label>زاوية الميل (θ)</label><span class="value" id="thV">30°</span></div>
-                    <input id="th" type="range" min="15" max="65" step="1" value="30">
+                    <div class="control-top"><label>زاوية الميل مع الرأسي θ</label><span class="value" id="thV">30°</span></div>
+                    <input id="th" type="range" min="10" max="75" step="1" value="30">
+                    <div class="range-labels"><span>10°</span><span>75°</span></div>
                 </div>
                 <div class="buttons">
-                    <button id="reset">إعادة ضبط</button>
+                    <button id="reset">إعادة الضبط</button>
                 </div>
             </div>
             <div class="results">
-                <div class="metric"><small id="l1">السرعة الخطية</small><strong id="r1">0</strong></div>
-                <div class="metric"><small id="l2">القوة المركزية</small><strong id="r2">0</strong></div>
-                <div class="metric"><small id="l3">الشد / رد الفعل</small><strong id="r3">0</strong></div>
-                <div class="metric"><small id="l4">حالة النظام</small><strong id="r4" style="font-size:13px;color:#34d399">مستقر</strong></div>
+                <div class="metric"><small id="l1">السرعة الخطية v</small><strong id="r1">—</strong></div>
+                <div class="metric"><small id="l2">القوة المركزية F_c</small><strong id="r2">—</strong></div>
+                <div class="metric"><small id="l3">الشد / رد الفعل</small><strong id="r3">—</strong></div>
+                <div class="metric"><small id="l4">الحالة / السرعة الحرجة</small><strong id="r4">—</strong></div>
             </div>
-            <div class="status" id="status">التفاعل الحقيقي يربط كتلة وحجم الكرة رياضياً وبصرياً مع مقدار القوى المؤثرة فوراً.</div>
+            <div class="status" id="status">غيّر المتغيرات لملاحظة النتائج والتحليل الفيزيائي.</div>
         </aside>
     </div>
+
+    <!-- قسم الشرح والقوانين المضاف بالكامل -->
+    <div class="below" id="lesson-details">
+        <section class="panel">
+            <div class="content">
+                <h3>الشرح التفصيلي والمعادلات الرياضية للدرس</h3>
+                
+                <p><b>1. الحركة الدائرية الرأسية (الخيط والدلو):</b> تتغير سرعة الجسم باستمرار أثناء دوران المسار الرأسي بفعل جاذبية الأرض، فتكون أسرع ما يمكن في الأسفل وأقل ما يمكن عند القمة. معادلة محصلة القوى نحو المركز:</p>
+                <div class="eq">أسفل المسار: T = (mv²/r) + mg<br>أعلى المسار: T = (mv²/r) − mg</div>
+                <ul>
+                    <li><b>الحالة الحرجة عند القمة:</b> حتى لا يرتخي الخيط (أو ينسكب الماء من الدلو)، يجب أن يكون الشد $T \ge 0$. وأقل سرعة حرجة هي: $v_{min} = \sqrt{gr}$.</li>
+                    <li><b>أقل سرعة عند القاع:</b> لإكمال دورة كاملة يلزم أن تكون السرعة بالأسفل $v_{bottom} \ge \sqrt{5gr}$.</li>
+                </ul>
+
+                <p><b>2. البندول المخروطي (دائرة أفقية):</b> يدور الجسم كتلته $m$ بخيط طوله $l$ ويصنع زاوية $\theta$ مع المحور الرأسي، فيرسم خيطه مخروطاً وقاعدته دائرة أفقية نصف قطرها $r = l \sin\theta$:</p>
+                <div class="eq">T cosθ = mg  (الاتزان الرأسي)<br>T sinθ = mv²/r  (القوة المركزية)<br>tanθ = v² / (rg)</div>
+                <ul>
+                    <li><b>السرعة الخطية:</b> $v = \sqrt{g r \tan\theta}$.</li>
+                    <li><b>الزمن الدوري:</b> $T_{دوري} = 2\pi \sqrt{\frac{l \cos\theta}{g}}$.</li>
+                </ul>
+
+                <p><b>3. الحركة على السطح الداخلي لوعاء مخروطي أملس:</b> يتحرك الجسم داخل وعاء مخروطي أملس دون خيط، وتلعب قوة رد الفعل العمودي $N$ نفس دور قوة الشد $T$:</p>
+                <div class="eq">N cosθ = mg  (تعادل الوزن)<br>N sinθ = mv²/r  (القوة المركزية نحو المحور)</div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="content">
+                <h3>اختبر فهمك (سؤال الدرس)</h3>
+                <p>لماذا يمكن أن يبقى الماء داخل دلو مقلوب عند أعلى نقطة في دائرة رأسية دون أن ينسكب؟</p>
+                <button class="choice" data-c="a">أ) لأن السرعة الكافية جعلت القوة المركزية المطلوبة تُستوفى من وزن الماء وحده ($v \ge \sqrt{gr}$) فيصبح الشد/الضغط صفر.</button>
+                <button class="choice" data-c="b">ب) لأن الجاذبية الأرضية تنعدم تماماً عند أعلى نقطة في المسار الدائري.</button>
+                <button class="choice" data-c="c">ج) لأن قوة الشد تكون أكبر ما يمكن عند القمة فتمسك الماء داخل الدلو.</button>
+                <div class="feedback" id="feedback" aria-live="polite"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">Elnagar Studio 21 · مختبر الفيزياء التفاعلي · البكالوريا المصرية</div>
 </main>
 
 <script>
@@ -108,30 +183,29 @@ function read(){
         m: +$('m').value,
         param: +$('param').value,
         th: +$('th').value * R2
-    }
+    };
 }
 
 function updateUI(){
-    const z=read();
+    const z = read();
     $('ctrl-th').style.display = z.mode !== 'vertical' ? 'block' : 'none';
-    $('ctrl-param').style.display = 'block';
-    $('mV').textContent = z.m.toFixed(1) + ' kg';
+    $('mV').textContent = z.m.toFixed(2) + ' kg';
     
     if(z.mode === 'vertical'){
-        $('paramLabel').textContent = 'نصف قطر المسار (r)';
-        $('paramV').textContent = z.param.toFixed(1) + ' m';
+        $('paramLabel').textContent = 'نصف قطر الدائرة r';
+        $('paramV').textContent = z.param.toFixed(2) + ' m';
     } else if(z.mode === 'conic'){
-        $('paramLabel').textContent = 'طول الخيط (l)';
-        $('paramV').textContent = z.param.toFixed(1) + ' m';
+        $('paramLabel').textContent = 'طول الخيط l';
+        $('paramV').textContent = z.param.toFixed(2) + ' m';
     } else {
-        $('paramLabel').textContent = 'حجم/أبعاد الوعاء';
-        $('paramV').textContent = z.param.toFixed(1) + 'x';
+        $('paramLabel').textContent = 'نصف قطر المسار r';
+        $('paramV').textContent = z.param.toFixed(2) + ' m';
     }
     $('thV').textContent = Math.round(z.th/R2) + '°';
 }
 
 function drawVector(x, y, dx, dy, color, label){
-    const L = Math.hypot(dx, dy); if(L < 2) return;
+    const L = Math.hypot(dx, dy); if(L < 3) return;
     const ux = dx/L, uy = dy/L;
     c.strokeStyle = color; c.fillStyle = color; c.lineWidth = 3;
     c.beginPath(); c.moveTo(x, y); c.lineTo(x+dx, y+dy); c.stroke();
@@ -140,69 +214,90 @@ function drawVector(x, y, dx, dy, color, label){
     c.lineTo(x+dx - ux*10 + uy*5, y+dy - uy*10 - ux*5);
     c.closePath(); c.fill();
     if(label){
-        c.font = 'bold 12px Tahoma'; c.textAlign = 'center'; c.fillStyle = '#e2e8f0';
-        c.fillText(label, x + dx + (ux*15), y + dy + (uy*15));
+        c.font = 'bold 13px Tahoma'; c.textAlign = 'center'; c.fillStyle = '#ffffff';
+        c.fillText(label, x + dx + (ux*16), y + dy + (uy*16));
     }
 }
 
-// رسم كرة حقيقية تتفاعل أبعادها ولونها مع الكتلة
-function drawRealBall(x, y, mass, label){
-    const radius = 12 + mass * 8; // حجم الكرة يكبر حقيقة بزيادة الكتلة
-    let grad = c.createRadialGradient(x - 4, y - 4, 2, x, y, radius);
-    grad.addColorStop(0, '#7dd3fc');
-    grad.addColorStop(1, '#0284c7');
+function drawBall(x, y, mass, label, isSlack){
+    const radius = 10 + mass * 7;
+    let grad = c.createRadialGradient(x - 3, y - 3, 2, x, y, radius);
+    if(isSlack){
+        grad.addColorStop(0, '#fca5a5'); grad.addColorStop(1, '#ef4444');
+    } else {
+        grad.addColorStop(0, '#7dd3fc'); grad.addColorStop(1, '#087fa5');
+    }
     
     c.fillStyle = grad;
     c.beginPath(); c.arc(x, y, radius, 0, Math.PI*2); c.fill();
     c.strokeStyle = '#ffffff'; c.lineWidth = 2; c.stroke();
     
-    c.fillStyle = '#f8fafc'; c.font = 'bold 11px Tahoma'; c.textAlign = 'center';
-    c.fillText(label + ` (${mass.toFixed(1)}kg)`, x, y - radius - 6);
+    c.fillStyle = '#f8fafc'; c.font = 'bold 12px Tahoma'; c.textAlign = 'center';
+    c.fillText(label, x, y - radius - 6);
     return radius;
 }
 
 function renderScene(){
-    c.clearRect(0,0,1000,580);
-    let bg = c.createLinearGradient(0,0,0,580);
+    c.clearRect(0,0,1000,550);
+    let bg = c.createLinearGradient(0,0,0,550);
     bg.addColorStop(0, '#020617'); bg.addColorStop(1, '#0f172a');
-    c.fillStyle = bg; c.fillRect(0,0,1000,580);
+    c.fillStyle = bg; c.fillRect(0,0,1000,550);
 
     updateUI();
     const z = read();
 
     if(z.mode === 'vertical'){
+        $('sceneTitle').textContent = 'مشهد التجربة: جسم يدور في دائرة رأسية';
         const cx = 500, cy = 270, r = z.param * 90;
-        // رسم مسار الدائرة الرأسية
+        
         c.strokeStyle = '#334155'; c.lineWidth = 2; c.setLineDash([6,6]);
         c.beginPath(); c.arc(cx, cy, r, 0, Math.PI*2); c.stroke(); c.setLineDash([]);
         
+        c.fillStyle = '#ffffff'; c.beginPath(); c.arc(cx, cy, 5, 0, Math.PI*2); c.fill();
+
         const x = cx + r * Math.sin(angle);
         const y = cy + r * Math.cos(angle);
         
-        // الخيط المتفاعل
-        c.strokeStyle = '#d97706'; c.lineWidth = 2 + z.m;
-        c.beginPath(); c.moveTo(cx, cy); c.lineTo(x, y); c.stroke();
+        const vBottom = 7.0;
+        const vSq = vBottom*vBottom - 2*G*z.param*(1 - Math.cos(angle));
+        const reach = vSq >= 0;
+        const v = reach ? Math.sqrt(vSq) : 0;
+        const T = z.m * ((vSq)/z.param + G*Math.cos(angle));
+        const isSlack = T < 0;
 
-        const rad = drawRealBall(x, y, z.m, 'جسم الدائرة');
+        if(!isSlack){
+            c.strokeStyle = '#d97706'; c.lineWidth = 2 + z.m;
+            c.beginPath(); c.moveTo(cx, cy); c.lineTo(x, y); c.stroke();
+        }
 
-        // حساب القوى اللحظية
-        const v = Math.sqrt(7*7 + 2*G*z.param*(1 - Math.cos(angle)));
-        const T = z.m * ((v*v)/z.param + G*Math.cos(angle));
+        drawBall(x, y, z.m, 'كرة / دلو', isSlack);
+
+        drawVector(x, y, 0, z.m * G * 10, '#f59e0b', `mg = ${(z.m*G).toFixed(1)}N`);
+        if(!isSlack){
+            const ux = (cx-x)/r, uy = (cy-y)/r;
+            drawVector(x, y, ux * Math.max(10, T*2), uy * Math.max(10, T*2), '#ef4444', `T = ${T.toFixed(1)}N`);
+        }
+
+        $('l1').textContent = 'السرعة الحالية v'; $('r1').textContent = v.toFixed(2) + ' m/s';
+        $('l2').textContent = 'القوة المركزية F_c'; $('r2').textContent = ((z.m * v * v) / z.param).toFixed(1) + ' N';
+        $('l3').textContent = 'الشد الحالي T'; $('r3').textContent = isSlack ? '0 N (ارتخاء)' : T.toFixed(1) + ' N';
+        $('l4').textContent = 'أقل سرعة بالقمة v_min'; $('r4').textContent = Math.sqrt(G*z.param).toFixed(2) + ' m/s';
         
-        drawVector(x, y, 0, z.m * G * 12, '#f59e0b', `mg = ${(z.m*G).toFixed(1)}N`);
-        const ux = (cx-x)/r, uy = (cy-y)/r;
-        drawVector(x, y, ux * Math.max(10, T*2.5), uy * Math.max(10, T*2.5), '#ef4444', `T = ${Math.max(0,T).toFixed(1)}N`);
-
-        $('r1').textContent = v.toFixed(2) + ' m/s';
-        $('r2').textContent = ((z.m * v * v) / z.param).toFixed(1) + ' N';
-        $('r3').textContent = Math.max(0, T).toFixed(1) + ' N';
-        $('r4').textContent = T < 0 ? 'ارتخاء الخيط!' : 'حركة منتظمة';
-        $('status').textContent = 'في الدائرة الرأسية: حجم وزنة الكرة يغيران قوة الشد (T) بوضوح عند القمة والقاع.';
+        const st = $('status');
+        if(isSlack){
+            st.textContent = 'السرعة الحالية غير كافية عند القمة! يرتخي الخيط (T = 0) وينسكب الماء من الدلو.';
+            st.style.background = '#fdf0e6'; st.style.color = '#a4540f';
+        } else {
+            st.textContent = `حركة مستمرة. الشد أسفل = ${(z.m*vBottom*vBottom/z.param + z.m*G).toFixed(1)} N، والشد بالقمة = ${Math.max(0, T).toFixed(1)} N.`;
+            st.style.background = '#eaf6f1'; st.style.color = '#20745a';
+        }
 
     } else if(z.mode === 'conic'){
-        const px = 500, py = 70, Lp = z.param * 150, Rp = Lp * Math.sin(z.th);
+        $('sceneTitle').textContent = 'مشهد التجربة: البندول المخروطي (دائرة أفقية)';
+        const px = 500, py = 70, Lp = z.param * 130, Rp = Lp * Math.sin(z.th);
         const yc = py + Lp * Math.cos(z.th), ry = Rp * 0.3;
 
+        c.fillStyle = '#475569'; c.fillRect(380, 52, 240, 14);
         c.strokeStyle = '#38bdf8'; c.lineWidth = 2; c.setLineDash([4,4]);
         c.beginPath(); c.ellipse(px, yc, Rp, ry, 0, 0, Math.PI*2); c.stroke(); c.setLineDash([]);
 
@@ -212,23 +307,28 @@ function renderScene(){
         c.strokeStyle = '#d97706'; c.lineWidth = 2 + z.m;
         c.beginPath(); c.moveTo(px, py); c.lineTo(bx, by); c.stroke();
 
-        drawRealBall(bx, by, z.m, 'بندول مخروطي');
+        drawBall(bx, by, z.m, 'بندول مخروطي', false);
 
+        const rReal = z.param * Math.sin(z.th);
         const T = (z.m * G) / Math.cos(z.th);
-        const v = Math.sqrt(G * Rp * Math.tan(z.th));
+        const v = Math.sqrt(G * rReal * Math.tan(z.th));
+        const Fc = z.m * G * Math.tan(z.th);
+        const per = 2 * Math.PI * Math.sqrt((z.param * Math.cos(z.th))/G);
 
-        drawVector(bx, by, 0, z.m * G * 15, '#f59e0b', `mg`);
+        drawVector(bx, by, 0, z.m * G * 10, '#f59e0b', 'mg');
         drawVector(bx, by, (px-bx)*0.4, (py-by)*0.4, '#ef4444', `T = ${T.toFixed(1)}N`);
 
-        $('r1').textContent = v.toFixed(2) + ' m/s';
-        $('r2').textContent = (T * Math.sin(z.th)).toFixed(1) + ' N';
-        $('r3').textContent = T.toFixed(1) + ' N';
-        $('r4').textContent = 'اتزان رأسي دقيق';
-        $('status').textContent = 'البندول المخروطي: بزيادة الكتلة (m) يزداد الشد (T) في الخيط طردياً للمحافظة على المسار.';
+        $('l1').textContent = 'السرعة الخطية v'; $('r1').textContent = v.toFixed(2) + ' m/s';
+        $('l2').textContent = 'القوة المركزية T.sinθ'; $('r2').textContent = Fc.toFixed(1) + ' N';
+        $('l3').textContent = 'شد الخيط T = mg/cosθ'; $('r3').textContent = T.toFixed(1) + ' N';
+        $('l4').textContent = 'الزمن الدوري T_period'; $('r4').textContent = per.toFixed(2) + ' s';
+
+        $('status').textContent = `المركبة الرأسية T.cosθ = ${(T*Math.cos(z.th)).toFixed(1)} N تتزن مع الوزن mg. والمركبة الأفقية T.sinθ هي القوة المركزية.`;
+        $('status').style.background = '#eaf6f1'; $('status').style.color = '#20745a';
 
     } else {
-        // الوعاء المخروطي الأملس المطابق للصورة الأولى
-        const px = 500, py = 80, Rbase = 180 * z.param, H = 260;
+        $('sceneTitle').textContent = 'مشهد التجربة: السطح الداخلي لوعاء مخروطي أملس';
+        const px = 500, py = 70, Rbase = 170, H = 260;
         
         c.strokeStyle = '#64748b'; c.lineWidth = 3; c.fillStyle = 'rgba(15, 23, 42, 0.9)';
         c.beginPath(); c.moveTo(px-Rbase, py+H); c.lineTo(px, py); c.lineTo(px+Rbase, py+H); c.closePath();
@@ -244,42 +344,49 @@ function renderScene(){
         const bx = px + currentR * Math.cos(angle*1.5);
         const by = cy + ry * Math.sin(angle*1.5);
 
-        drawRealBall(bx, by, z.m, 'جسم ع الأوعية');
+        drawBall(bx, by, z.m, 'جسم داخل وعاء', false);
 
         const N = (z.m * G) / Math.cos(z.th);
-        const v = Math.sqrt(G * currentR * Math.tan(z.th));
+        const v = Math.sqrt(G * z.param * Math.tan(z.th));
 
-        // تحليل القوى مطابقة لصورة الكتاب الأولى (N عمودي ع السطح)
-        drawVector(bx, by, 0, z.m * G * 15, '#f59e0b', 'mg');
+        drawVector(bx, by, 0, z.m * G * 10, '#f59e0b', 'mg');
         drawVector(bx, by, -35, -45, '#10b981', `N = ${N.toFixed(1)}N`);
 
-        $('r1').textContent = v.toFixed(2) + ' m/s';
-        $('r2').textContent = (N * Math.sin(z.th)).toFixed(1) + ' N (N.sinθ)';
-        $('r3').textContent = N.toFixed(1) + ' N';
-        $('r4').textContent = 'N.cosθ = mg';
-        $('status').textContent = 'الوعاء المخروطي: تحليل رد الفعل العمودي (N) يظهر بدقة متناهية مطابقة لرسومات الكتاب المدرسي.';
+        $('l1').textContent = 'السرعة المطلوبة v'; $('r1').textContent = v.toFixed(2) + ' m/s';
+        $('l2').textContent = 'القوة المركزية N.sinθ'; $('r2').textContent = (N*Math.sin(z.th)).toFixed(1) + ' N';
+        $('l3').textContent = 'رد الفعل العمودي N'; $('r3').textContent = N.toFixed(1) + ' N';
+        $('l4').textContent = 'الاتزان الرأسي'; $('r4').textContent = 'N.cosθ = mg';
+
+        $('status').textContent = 'السطح المخروطي الأملس: قوة رد الفعل N تنحلل إلى N cosθ لتعادل الوزن، و N sinθ لتوجه الجسم نحو المركز.';
+        $('status').style.background = '#eaf6f1'; $('status').style.color = '#20745a';
     }
 }
 
-function step(){
+function step(ts){
     if(!running) return;
-    angle += 0.04;
+    angle += 0.03;
     renderScene();
     raf = requestAnimationFrame(step);
 }
 
-$('mode').onchange = () => renderScene();
+$('mode').onchange = () => { renderScene(); };
 ['m','param','th'].forEach(id => $(id).addEventListener('input', renderScene));
 
 $('play').onclick = () => {
-    if(!running){ running=true; $('motionState').textContent='تعمل حياً'; raf=requestAnimationFrame(step); }
+    if(!running){ running=true; $('motionState').textContent='الحركة تعمل الأن'; raf=requestAnimationFrame(step); }
 };
-$('pause').onclick = () => { running=false; cancelAnimationFrame(raf); $('motionState').textContent='متوقف'; };
+$('pause').onclick = () => { running=false; cancelAnimationFrame(raf); $('motionState').textContent='إيقاف مؤقت'; };
 $('reset').onclick = () => {
     running=false; cancelAnimationFrame(raf);
-    $('m').value=0.5; $('param').value=1.0; $('th').value=30;
+    $('m').value=0.5; $('param').value=0.8; $('th').value=30;
     renderScene(); $('motionState').textContent='جاهز';
 };
+
+document.querySelectorAll('.choice').forEach(b => b.onclick = () => {
+    $('feedback').textContent = b.dataset.c === 'a' 
+        ? 'إجابة صحيحة ممتاز! عند السرعة الحرجة فأعلى v = √(gr)، توفر قوة الجاذبية (الوزن) القوة المركزية المطلوبة كاملة دون الحاجة لضغط أو شد، فيبقى الماء بداخل الدلو.'
+        : 'إجابة غير صحيحة. الإجابة الصحيحة هي (أ) لأن وزن الماء يوفر القوة المركزية المطلوبة للدوران عند السرعة الحرجة v = √(gr).';
+});
 
 renderScene();
 })();
