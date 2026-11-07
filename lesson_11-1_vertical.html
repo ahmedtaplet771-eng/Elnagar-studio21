@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elnagar Studio 21 - البندول والمخروط | مختبر الفيزياء</title>
+<title>Elnagar Studio 21 - الحركة الدائرية الأفقية والرأسية</title>
 <style>
 :root{--ink:#183447;--muted:#617987;--blue:#087fa5;--line:#d7e3e8}
 *{box-sizing:border-box}
@@ -29,7 +29,6 @@ canvas{display:block;width:100%;height:auto;background:#020617}
 .control-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px;font-weight:bold;font-size:14px}
 .value{color:var(--blue);direction:ltr}
 input[type=range]{width:100%;accent-color:#087fa5}
-.range-labels{display:flex;justify-content:space-between;color:#82939c;font-size:11px}
 .buttons{display:flex;gap:8px;flex-wrap:wrap}
 button{font-family:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 13px;background:#087fa5;color:#fff;font-weight:bold;transition:0.2s}
 button:hover{opacity:0.9}
@@ -39,216 +38,253 @@ button.secondary{background:#edf4f5;color:#28596a;border:1px solid #d4e3e7}
 .metric small{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}
 .metric strong{font-size:18px;color:#155b73;direction:ltr;display:block}
 .status{margin:0 16px 16px;background:#eaf6f1;color:#20745a;border-radius:10px;padding:11px;font-size:13px;line-height:1.7}
-.below{display:grid;grid-template-columns:1.2fr .8fr;gap:17px;margin-top:17px}
-.content{padding:18px;line-height:1.9}
-.content h3{margin:0 0 9px;color:#1e3a8a}
-.eq{background:#eef7f8;border:1px solid #d5e9ec;border-radius:12px;padding:13px;text-align:center;font-size:20px;font-weight:bold;color:#155b73;direction:ltr;margin:12px 0}
-.content p,.content li{font-size:14px}
-.choice{display:block;width:100%;text-align:right;margin:8px 0;background:#f3f7f8;color:#25495b;border:1px solid #dce8eb;padding:10px;border-radius:8px}
-.feedback{min-height:24px;color:#218b68;font-weight:bold;font-size:13px;margin-top:10px}
 .footer{text-align:center;color:#82939c;font-size:12px;margin-top:22px}
-@media(max-width:900px){.layout,.below{grid-template-columns:1fr}}
-@media(max-width:520px){header{position:static}.results{grid-template-columns:1fr 1fr}.panel-head{align-items:flex-start;flex-direction:column}}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
     <div class="top">
-        <h1>⚛ Elnagar Studio 21 · البندول والمخروط</h1>
+        <h1>⚛ Elnagar Studio 21 · مختبر الفيزياء المدرسي</h1>
         <a class="back" href="#">قائمة الدروس</a>
     </div>
 </header>
 <main>
     <section class="hero">
         <div>
-            <div class="eyebrow">الدرس 1-11 · الحركة الدائرية</div>
-            <h2>البندول المخروطي والحركة على سطح وعاء مخروطي</h2>
-            <p>دراسة حركة جسم في مسار دائري أفقي بتأثير قوة الشد والجاذبية أو رد الفعل العمودي لسطح مخروطي أملس.</p>
+            <div class="eyebrow">الدرس 1-11 · الحركة الدائرية الأفقية والرأسية</div>
+            <h2>محاكاة أفكار الكتاب المدرسي البكالوريا</h2>
+            <p>اختر الفكرة المطلوبة من لوحة التحكم لمشاهدة تحليل القوى، الأسهم الاتجاهية (الشد T، الوزن mg، رد الفعل N)، والعلاقات الرياضية.</p>
         </div>
-        <span class="pill">محاكاة تفاعلية</span>
+        <span class="pill">تفاعلي بالكامل</span>
     </section>
 
     <div class="layout">
         <section class="panel">
             <div class="panel-head">
-                <h3 id="sceneTitle">مشهد التجربة: البندول والمخروط</h3>
-                <span class="hint">تفاعل مع الحركة الفيزيائية</span>
+                <h3 id="sceneTitle">مشهد التجربة</h3>
+                <span class="hint">عرض مرئي متوافق مع رسومات الكتاب</span>
             </div>
             <canvas id="scene" width="1000" height="550"></canvas>
             <div class="buttons" style="padding:12px 16px;border-top:1px solid #e8eff1">
                 <button id="play">▶ ابدأ الحركة</button>
-                <button class="secondary" id="pause">Ⅱ إيقاف مؤقت</button>
-                <span class="hint" id="motionState" style="align-self:center;margin-right:auto">جاهز للاختبار</span>
+                <button class="secondary" id="pause">Ⅱ إيقاف</button>
+                <span class="hint" id="motionState" style="align-self:center;margin-right:auto">جاهز</span>
             </div>
         </section>
 
         <aside class="panel">
             <div class="panel-head">
-                <h3>لوحة التحكم</h3>
+                <h3>لوحة التحكم والأفكار</h3>
             </div>
             <div class="controls">
                 <div class="control">
-                    <div class="control-top"><label for="mode">نموذج الحركة</label></div>
+                    <div class="control-top"><label>اختر فكرة الدرس</label></div>
                     <select id="mode" style="width:100%;padding:11px;border:1px solid #d4e3e7;border-radius:10px;background:#f8fbfc;font-family:inherit;color:#183447">
-                        <option value="conic">البندول المخروطي (بخيط)</option>
-                        <option value="bowl">الحركة داخل وعاء مخروطي أملس</option>
+                        <option value="vertical">1. الحركة في دائرة رأسية (الشد والوزن والقمة/القاع)</option>
+                        <option value="conic">2. البندول المخروطي (دائرة أفقية بخيط)</option>
+                        <option value="bowl">3. الحركة داخل وعاء مخروطي أملس (N sinθ و N cosθ)</option>
                     </select>
                 </div>
                 <div class="control">
-                    <div class="control-top"><label>الكتلة m</label><span class="value" id="mV"></span></div>
+                    <div class="control-top"><label>الكتلة m</label><span class="value" id="mV">0.50 kg</span></div>
                     <input id="m" type="range" min="0.1" max="2" step="0.05" value="0.5">
                 </div>
-                <div class="control" data-ctrl="conic">
-                    <div class="control-top"><label>طول الخيط l</label><span class="value" id="lV"></span></div>
-                    <input id="l" type="range" min="0.5" max="3" step="0.05" value="1.5">
+                <div class="control" id="ctrl-r">
+                    <div class="control-top"><label>نصف القطر r / أو السرعة بالقاع</label><span class="value" id="rV">0.80 m</span></div>
+                    <input id="param1" type="range" min="0.4" max="2.0" step="0.05" value="0.8">
                 </div>
-                <div class="control">
-                    <div class="control-top"><label>زاوية الميل مع الرأسي θ</label><span class="value" id="thV"></span></div>
-                    <input id="th" type="range" min="15" max="70" step="1" value="35">
+                <div class="control" id="ctrl-th" style="display:none;">
+                    <div class="control-top"><label>زاوية الميل θ مع الرأسي</label><span class="value" id="thV">30°</span></div>
+                    <input id="param2" type="range" min="15" max="70" step="1" value="30">
                 </div>
                 <div class="buttons">
                     <button id="reset">إعادة الضبط</button>
                 </div>
             </div>
             <div class="results">
-                <div class="metric"><small id="l1">—</small><strong id="r1">—</strong></div>
-                <div class="metric"><small id="l2">—</small><strong id="r2">—</strong></div>
-                <div class="metric"><small id="l3">—</small><strong id="r3">—</strong></div>
-                <div class="metric"><small id="l4">—</small><strong id="r4">—</strong></div>
+                <div class="metric"><small id="l1">السرعة v</small><strong id="r1">0</strong></div>
+                <div class="metric"><small id="l2">القوة المركزية</small><strong id="r2">0</strong></div>
+                <div class="metric"><small id="l3">الشد / رد الفعل</small><strong id="r3">0</strong></div>
+                <div class="metric"><small id="l4">الحالة</small><strong id="r4" style="font-size:14px">منتظم</strong></div>
             </div>
-            <div class="status" id="status">تحليل القوى والسرعة وفقاً لمنهج الفيزياء.</div>
+            <div class="status" id="status">اختر الفكرة وشاهد التطبيق الفيزيائي.</div>
         </aside>
     </div>
-
-    <div class="footer">Elnagar Studio 21 · مختبر الفيزياء التفاعلي</div>
+    <div class="footer">Elnagar Studio 21 · مرجع الفيزياء المدرسي</div>
 </main>
 
 <script>
 (()=>{
 const $=id=>document.getElementById(id),canvas=$('scene'),c=canvas.getContext('2d');
 const G=9.8,R2=Math.PI/180;
-let running=false,raf=0,phi=0;
+let running=false,raf=0,angle=0;
 
-const read=()=>({
-    mode:$('mode').value,
-    m:+$('m').value,
-    l:+$('l').value,
-    th:+$('th').value*R2
-});
-
-function physics(){
-    const z=read();
-    // في الحالتين القوانين متطابقة رياضياً (r = l * sin(th) افتراضياً للأبعاد)
-    const lEff = z.mode==='conic' ? z.l : 1.5;
-    const rr = lEff * Math.sin(z.th);
-    const v = Math.sqrt(G * rr * Math.tan(z.th));
-    const force = (z.m * G) / Math.cos(z.th); // قوة الشد T أو رد الفعل N
-    const per = 2 * Math.PI * Math.sqrt((lEff * Math.cos(z.th)) / G);
-    return {...z, lEff, rr, v, force, per, w: v / rr};
-}
-
-function updateMetrics(){
-    const z=physics();
-    document.querySelectorAll('[data-ctrl]').forEach(e=>e.style.display = z.mode==='conic'?'block':'none');
-    
-    [['mV',z.m.toFixed(2)+' kg'],['lV',z.l.toFixed(2)+' m'],['thV',Math.round(z.th/R2)+'°']].forEach(([id,tx])=>$(id).textContent=tx);
-    
-    if(z.mode==='conic'){
-        $('r1').textContent = z.rr.toFixed(2)+' m'; $('l1').innerHTML = 'نصف قطر الدائرة r';
-        $('r2').textContent = z.v.toFixed(2)+' m/s'; $('l2').innerHTML = 'السرعة الخطية v';
-        $('r3').textContent = z.force.toFixed(2)+' N'; $('l3').innerHTML = 'قوة الشد T';
-        $('r4').textContent = z.per.toFixed(2)+' s'; $('l4').innerHTML = 'الزمن الدوري';
-        $('status').textContent = 'البندول المخروطي: المركبة الأفقية للشد تصنع القوة المركزية، والرأسية تتزن مع الوزن.';
-    } else {
-        $('r1').textContent = z.rr.toFixed(2)+' m'; $('l1').innerHTML = 'نصف قطر الدائرة r';
-        $('r2').textContent = z.v.toFixed(2)+' m/s'; $('l2').innerHTML = 'السرعة المطلوبة v';
-        $('r3').textContent = z.force.toFixed(2)+' N'; $('l3').innerHTML = 'رد الفعل العمودي N';
-        $('r4').textContent = z.per.toFixed(2)+' s'; $('l4').innerHTML = 'الزمن الدوري';
-        $('status').textContent = 'الوعاء المخروطي الأملس: رد الفعل العمودي N يحلل إلى مركبتين لتدوير الجسم.';
+function read(){
+    return {
+        mode:$('mode').value,
+        m:+$('m').value,
+        p1:+ $('param1').value, // يمثل r في الرأسية، أو l في البندول، أو r في الوعاء
+        th:+ $('param2').value * R2
     }
-    return z;
 }
 
-function drawConic(z){
-    const px=500,py=80,S=140,Lp=z.l*S,Rp=Lp*Math.sin(z.th),yc=py+Lp*Math.cos(z.th),ry=Rp*.3;
-    c.fillStyle='#475569';c.fillRect(380,52,240,16);
-    
-    // مسار الدائرة الأفقية
-    c.strokeStyle='#38bdf8';c.lineWidth=2;c.setLineDash([4,4]);
-    c.beginPath();c.ellipse(px,yc,Rp,ry,0,0,Math.PI*2);c.stroke();
-    c.setLineDash([]);
+function updateUI(){
+    const z=read();
+    $('ctrl-th').style.display = z.mode !== 'vertical' ? 'block' : 'none';
+    $('mV').textContent = z.m.toFixed(2)+' kg';
+    $('rV').textContent = z.p1.toFixed(2) + (z.mode==='vertical'?' m':'');
+    $('thV').textContent = Math.round(z.th/R2)+'°';
+}
 
-    const bx=px+Rp*Math.cos(phi),by=yc+ry*Math.sin(phi);
+function drawArrow(x,y,dx,dy,color,label){
+    const L=Math.hypot(dx,dy); if(L<4)return;
+    const ux=dx/L, uy=dy/L;
+    c.strokeStyle=color; c.fillStyle=color; c.lineWidth=3;
+    c.beginPath(); c.moveTo(x,y); c.lineTo(x+dx,y+dy); c.stroke();
+    c.beginPath(); c.moveTo(x+dx,y+dy);
+    c.lineTo(x+dx-ux*10-uy*6, y+dy-uy*10+ux*6);
+    c.lineTo(x+dx-ux*10+uy*6, y+dy-uy*10-ux*6);
+    c.closePath(); c.fill();
+    if(label){
+        c.font='bold 14px Tahoma'; c.textAlign='center'; c.fillText(label, x+dx+15, y+dy+15);
+    }
+}
+
+function drawVertical(){
+    const z=read();
+    const cx=500, cy=270, r=130;
+    // رسم المسار
+    c.strokeStyle='#334155'; c.lineWidth=2; c.setLineDash([5,5]);
+    c.beginPath(); c.arc(cx,cy,r,0,Math.PI*2); c.stroke(); c.setLineDash([]);
     
+    // مركز الدائرة
+    c.fillStyle='#fff'; c.beginPath(); c.arc(cx,cy,5,0,Math.PI*2); c.fill();
+
+    const x = cx + r * Math.sin(angle);
+    const y = cy + r * Math.cos(angle); // زاوية صفر عند القاع
+
     // الخيط
-    c.strokeStyle='#d97706';c.lineWidth=3;
-    c.beginPath();c.moveTo(px,py);c.lineTo(bx,by);c.stroke();
+    c.strokeStyle='#d97706'; c.lineWidth=3;
+    c.beginPath(); c.moveTo(cx,cy); c.lineTo(x,y); c.stroke();
+
+    // الكرة
+    c.fillStyle='#38bdf8'; c.beginPath(); c.arc(x,y,14,0,Math.PI*2); c.fill();
+    c.strokeStyle='#fff'; c.lineWidth=2; c.stroke();
+
+    // الأسهم (الوزن والشد)
+    drawArrow(x,y, 0, 45, '#f59e0b', 'mg');
+    const T = z.m * 7 * 7 / z.p1 + z.m * G * Math.cos(angle);
+    const ux = (cx-x)/r, uy = (cy-y)/r;
+    drawArrow(x,y, ux*Math.max(10,T*3), uy*Math.max(10,T*3), '#ef4444', 'T');
+
+    $('r1').textContent = '7.0 m/s';
+    $('r2').textContent = (z.m * 49 / z.p1).toFixed(1) + ' N';
+    $('r3').textContent = Math.max(0, T).toFixed(1) + ' N';
+    $('r4').textContent = T < 0 ? 'ارتخاء الخيط!' : 'مشدود';
+    $('status').textContent = 'في الدائرة الرأسية: الشد والوزن يتغيران حسب الموضع (أكبر عند القاع وأقل عند القمة).';
+}
+
+function drawConic(){
+    const z=read();
+    const px=500, py=80, Lp=200, Rp=Lp*Math.sin(z.th), yc=py+Lp*Math.cos(z.th), ry=Rp*0.3;
+    
+    // مسار البندول المخروطي
+    c.strokeStyle='#38bdf8'; c.lineWidth=2; c.setLineDash([4,4]);
+    c.beginPath(); c.ellipse(px,yc,Rp,ry,0,0,Math.PI*2); c.stroke(); c.setLineDash([]);
+
+    const bx = px + Rp * Math.cos(angle*2);
+    const by = yc + ry * Math.sin(angle*2);
+
+    // الخيط
+    c.strokeStyle='#d97706'; c.lineWidth=3;
+    c.beginPath(); c.moveTo(px,py); c.lineTo(bx,by); c.stroke();
 
     // الجسم
-    c.fillStyle='#38bdf8';
-    c.beginPath();c.arc(bx,by,14,0,Math.PI*2);c.fill();
-    c.strokeStyle='#ffffff';c.lineWidth=2;c.stroke();
+    c.fillStyle='#38bdf8'; c.beginPath(); c.arc(bx,by,14,0,Math.PI*2); c.fill();
+    c.strokeStyle='#fff'; c.lineWidth=2; c.stroke();
+
+    const T = (z.m * G) / Math.cos(z.th);
+    const v = Math.sqrt(G * Rp * Math.tan(z.th));
+
+    drawArrow(bx,by, 0, 50, '#f59e0b', 'mg');
+    drawArrow(bx,by, (px-bx)*0.4, (py-by)*0.4, '#ef4444', 'T');
+
+    $('r1').textContent = v.toFixed(2) + ' m/s';
+    $('r2').textContent = (T * Math.sin(z.th)).toFixed(1) + ' N';
+    $('r3').textContent = T.toFixed(1) + ' N (شد)';
+    $('r4').textContent = 'اتزان رأسي';
+    $('status').textContent = 'البندول المخروطي: المركبة الرأسية T cosθ تعادل الوزن mg، والمركبة الأفقية T sinθ توفر القوة المركزية.';
 }
 
-function drawBowl(z){
-    const px=500,py=100,Rbase=180,H=250;
-    
-    // رسم الوعاء المخروطي المجوف
-    c.strokeStyle='#64748b';c.lineWidth=3;c.fillStyle='rgba(15, 23, 42, 0.8)';
-    c.beginPath();
-    c.moveTo(px - Rbase, py + H);
-    c.lineTo(px, py);
-    c.lineTo(px + Rbase, py + H);
-    c.closePath();
-    c.fill();
-    c.stroke();
+function drawBowl(){
+    const z=read();
+    const px=500, py=80, Rbase=180, H=260;
 
-    // مسار الحركة داخل المخروط
-    const currentH = 150;
+    // رسم وعاء مخروطي أملس
+    c.strokeStyle='#64748b'; c.lineWidth=3; c.fillStyle='rgba(15, 23, 42, 0.85)';
+    c.beginPath(); c.moveTo(px-Rbase, py+H); c.lineTo(px, py); c.lineTo(px+Rbase, py+H); c.closePath();
+    c.fill(); c.stroke();
+
+    const currentH = 160;
     const currentR = (currentH / H) * Rbase * Math.sin(z.th);
     const cy = py + currentH;
     const ry = currentR * 0.3;
 
-    c.strokeStyle='#38bdf8';c.lineWidth=2;c.setLineDash([4,4]);
-    c.beginPath();c.ellipse(px,cy,currentR,ry,0,0,Math.PI*2);c.stroke();
-    c.setLineDash([]);
+    c.strokeStyle='#38bdf8'; c.lineWidth=2; c.setLineDash([4,4]);
+    c.beginPath(); c.ellipse(px,cy,currentR,ry,0,0,Math.PI*2); c.stroke(); c.setLineDash([]);
 
-    const bx=px+currentR*Math.cos(phi),by=cy+ry*Math.sin(phi);
+    const bx = px + currentR * Math.cos(angle*2);
+    const by = cy + ry * Math.sin(angle*2);
 
     // الجسم داخل الوعاء
-    c.fillStyle='#38bdf8';
-    c.beginPath();c.arc(bx,by,14,0,Math.PI*2);c.fill();
-    c.strokeStyle='#ffffff';c.lineWidth=2;c.stroke();
+    c.fillStyle='#38bdf8'; c.beginPath(); c.arc(bx,by,14,0,Math.PI*2); c.fill();
+    c.strokeStyle='#fff'; c.lineWidth=2; c.stroke();
+
+    const N = (z.m * G) / Math.cos(z.th);
+    const v = Math.sqrt(G * currentR * Math.tan(z.th));
+
+    // تحليل القوى (N عمودي على السطح المخروطي مطابقة للصورة الأولى)
+    drawArrow(bx,by, 0, 50, '#f59e0b', 'mg');
+    drawArrow(bx,by, -35, -45, '#10b981', 'N (رد الفعل)');
+
+    $('r1').textContent = v.toFixed(2) + ' m/s';
+    $('r2').textContent = (N * Math.sin(z.th)).toFixed(1) + ' N (N.sinθ)';
+    $('r3').textContent = N.toFixed(1) + ' N (N)';
+    $('r4').textContent = 'N.cosθ = mg';
+    $('status').textContent = 'سطح وعاء مخروطي أملس: رد الفعل العمودي N ينحلل إلى N cosθ تعادل الوزن، و N sinθ نحو المركز كقوة مركزية (الصورة الأولى).';
 }
 
 function draw(){
     c.clearRect(0,0,1000,550);
-    let g=c.createLinearGradient(0,0,0,550);
-    g.addColorStop(0,'#020617'); g.addColorStop(1,'#0f172a');
-    c.fillStyle=g; c.fillRect(0,0,1000,550);
+    let grad=c.createLinearGradient(0,0,0,550);
+    grad.addColorStop(0,'#020617'); grad.addColorStop(1,'#0f172a');
+    c.fillStyle=grad; c.fillRect(0,0,1000,550);
 
-    const z=updateMetrics();
-    if(z.mode==='conic') drawConic(z); else drawBowl(z);
+    updateUI();
+    const mode = read().mode;
+    if(mode==='vertical') drawVertical();
+    else if(mode==='conic') drawConic();
+    else drawBowl();
 }
 
-function step(ts){
+function step(){
     if(!running) return;
-    const z=physics();
-    phi += z.w * 0.03;
+    angle += 0.03;
     draw();
-    if(running) raf=requestAnimationFrame(step);
+    raf = requestAnimationFrame(step);
 }
 
-$('mode').onchange=()=> { draw(); };
-['m','l','th'].forEach(id=>$(id).addEventListener('input',()=>draw()));
+$('mode').onchange = () => { draw(); };
+['m','param1','param2'].forEach(id => $(id).addEventListener('input', draw));
 
-$('play').onclick=()=>{
+$('play').onclick = () => {
     if(!running){ running=true; $('motionState').textContent='الحركة تعمل'; raf=requestAnimationFrame(step); }
 };
-$('pause').onclick=()=>{ running=false; cancelAnimationFrame(raf); $('motionState').textContent='إيقاف مؤقت'; };
-$('reset').onclick=()=>{ 
+$('pause').onclick = () => { running=false; cancelAnimationFrame(raf); $('motionState').textContent='مؤقت'; };
+$('reset').onclick = () => { 
     running=false; cancelAnimationFrame(raf); 
-    $('m').value=0.5; $('l').value=1.5; $('th').value=35; 
+    $('m').value=0.5; $('param1').value=0.8; $('param2').value=30; 
     draw(); $('motionState').textContent='جاهز'; 
 };
 
