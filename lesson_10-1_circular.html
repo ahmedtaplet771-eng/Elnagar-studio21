@@ -1,223 +1,45 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الحركة الدائرية والتطبيقات | مختبر الفيزياء</title><style>
-:root{--ink:#183447;--muted:#617987;--blue:#087fa5;--line:#d7e3e8}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0,#fff,#eef5f5 55%,#e4eef1);font-family:Tahoma,Arial;color:var(--ink)}header{padding:16px clamp(14px,4vw,50px);background:#ffffffdf;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:3}.top{max-width:1350px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1{font-size:clamp(18px,2.5vw,27px);margin:0}.back{text-decoration:none;color:var(--blue);border:1px solid #b9d8e0;border-radius:10px;padding:9px 13px;font-weight:bold}main{max-width:1350px;margin:auto;padding:22px clamp(12px,3vw,38px) 50px}.hero{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:18px}.hero h2{font-size:clamp(23px,3vw,34px);margin:5px 0}.hero p{color:var(--muted);line-height:1.8;margin:0;max-width:800px}.eyebrow{color:var(--blue);font-weight:bold;font-size:13px}.pill{background:#e4f3f5;border:1px solid #c6e1e6;color:#17617a;border-radius:30px;padding:8px 13px;font-size:13px;font-weight:bold}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(290px,.8fr);gap:17px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 9px 28px #24485a0c}.panel-head{padding:15px 18px;border-bottom:1px solid #e8eff1;display:flex;justify-content:space-between;gap:10px;align-items:center}.panel-head h3{margin:0;font-size:18px}.hint{font-size:12px;color:var(--muted)}canvas{display:block;width:100%;height:auto;background:#eaf3f4}.controls{padding:16px 18px}.control{margin-bottom:19px}.control-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px;font-weight:bold;font-size:14px}.value{color:var(--blue);direction:ltr}input[type=range]{width:100%;accent-color:#087fa5}.range-labels{display:flex;justify-content:space-between;color:#82939c;font-size:11px}.buttons{display:flex;gap:8px;flex-wrap:wrap}button{font-family:inherit;cursor:pointer;border:0;border-radius:10px;padding:10px 13px;background:#087fa5;color:#fff;font-weight:bold}button.secondary{background:#edf4f5;color:#28596a;border:1px solid #d4e3e7}.results{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16px 16px}.metric{background:#f2f7f8;border:1px solid #e1ebee;border-radius:12px;padding:12px}.metric small{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.metric strong{font-size:18px;color:#155b73;direction:ltr;display:block}.status{margin:0 16px 16px;background:#eaf6f1;color:#20745a;border-radius:10px;padding:11px;font-size:13px;line-height:1.7}.below{display:grid;grid-template-columns:1.2fr .8fr;gap:17px;margin-top:17px}.content{padding:18px;line-height:1.9}.content h3{margin:0 0 9px}.eq{background:#eef7f8;border:1px solid #d5e9ec;border-radius:12px;padding:13px;text-align:center;font-size:18px;font-weight:bold;color:#155b73;direction:ltr;margin:12px 0}.content p,.content li{font-size:14px}.choice{display:block;width:100%;text-align:right;margin:8px 0;background:#f3f7f8;color:#25495b;border:1px solid #dce8eb}.feedback{min-height:24px;color:#218b68;font-weight:bold;font-size:13px;margin-top:10px}.footer{text-align:center;color:#82939c;font-size:12px;margin-top:22px}@media(max-width:900px){.layout,.below{grid-template-columns:1fr}}
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#edf4f6"><title>معمل عزم القوة | مختبر الفيزياء</title>
+<style>
+:root{--ink:#183447;--muted:#607887;--blue:#087fa5;--line:#d5e2e7;--gold:#efad35;--green:#23865b}*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:radial-gradient(ellipse at 15% 5%,#fff 0,#f2f7f6 42%,#e4eef1 100%);min-height:100vh}header{padding:18px clamp(14px,4vw,48px);background:#ffffffdc;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}a{color:var(--blue);text-decoration:none;font-weight:bold}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#087fa5,#54bdc8);display:grid;place-items:center;color:white;font-size:23px}h1{font-size:clamp(20px,3vw,28px);margin:0}.sub{margin:4px 0 0;color:var(--muted);font-size:13px}main{max-width:1250px;margin:auto;padding:24px clamp(12px,3vw,34px) 50px}.hero{margin-bottom:18px}.hero h2{margin:0 0 7px;font-size:24px}.hero p{margin:0;color:var(--muted);line-height:1.8}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.8fr);gap:18px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px #24485a0c;overflow:hidden}.panel-head{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-head h3{margin:0;font-size:17px}.scene{background:linear-gradient(#e9f7fb 0%,#f7fbf7 72%,#dbe9d9 72%,#c8ddc4 100%);position:relative}.scene canvas{display:block;width:100%;height:auto;aspect-ratio:780/500}.scene-note{padding:10px 16px;color:#536d7a;font-size:12px;background:#f8fbfc;border-top:1px solid var(--line)}.controls{padding:17px;display:grid;gap:16px}.control label{display:flex;justify-content:space-between;gap:12px;font-weight:bold;font-size:14px;margin-bottom:8px}.control output{color:var(--blue);font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--blue)}select{width:100%;padding:11px;border:1px solid #cbdce2;border-radius:10px;background:white;color:var(--ink);font:inherit}.buttons{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:11px 15px;font: bold 14px Tahoma;cursor:pointer;background:var(--blue);color:white}.btn.secondary{background:#eaf3f5;color:#24576a}.btn:active{transform:scale(.98)}.readouts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:14px;border-top:1px solid var(--line)}.metric{background:#f3f8f9;border:1px solid #e0eaed;border-radius:12px;padding:11px}.metric span{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.metric strong{font-size:19px;color:#145e78;font-variant-numeric:tabular-nums}.metric small{font-size:11px;color:var(--muted)}.below{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.content{padding:18px;line-height:1.9}.content h3{margin:0 0 10px;font-size:18px}.formula{direction:ltr;text-align:center;background:#edf7f9;border:1px solid #d3e9ee;border-radius:12px;padding:13px;font-size:21px;font-weight:bold;color:#135c75;margin:12px 0}.tip{background:#fff8e9;border-right:4px solid var(--gold);padding:11px 13px;border-radius:8px;margin:12px 0;font-size:13px}.good{background:#eef8f2;border-right:4px solid #48a978;padding:11px 13px;border-radius:8px;margin:12px 0;font-size:13px}.quiz{padding:18px}.quiz h3{margin:0 0 12px}.q{border-top:1px solid var(--line);padding:13px 0}.q:first-of-type{border:0}.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.answers button{border:1px solid #d5e2e7;background:#f8fbfc;color:var(--ink);border-radius:9px;padding:10px;text-align:right;font:14px Tahoma;cursor:pointer}.answers button:hover{border-color:var(--blue)}.feedback{font-size:13px;margin-top:8px;min-height:20px;color:var(--green)}footer{text-align:center;color:#748995;font-size:12px;margin-top:25px}@media(max-width:850px){.layout,.below{grid-template-columns:1fr}}@media(max-width:480px){.answers{grid-template-columns:1fr}.panel-head{align-items:flex-start}.metric strong{font-size:17px}}
 </style></head><body>
-<header><div class="top"><h1>⚛ مختبر الفيزياء التفاعلي · البكالوريا المصرية</h1><a class="back" href="index.html">← قائمة الدروس</a></div></header>
-<main><section class="hero"><div><div class="eyebrow">الدرس 10-1 · الحركة الدائرية والتطبيقات</div><h2>الحركة الدائرية المنتظمة وتطبيقاتها</h2><p>اختر بين تجربة الكرة الأفقية، أو حركة القطار الدوار على مسار مائل، أو تحرك كرة داخل وعاء مخروطي لاستكشاف القوى المركزية فيزيائيًا.</p></div><span class="pill">أحمد السيد غريب النجار</span></section>
-
-<div class="layout">
-<section class="panel">
-<div class="panel-head">
-<div>
-<button class="secondary" id="tab1" style="background:#087fa5;color:#fff">1. كرة بخيط</button>
-<button class="secondary" id="tab2">2. القطار الدوار</button>
-<button class="secondary" id="tab3">3. الوعاء المخروطي</button>
-</div>
-<span class="hint" id="modeTitle">منظر علوي لحركة كرة</span>
-</div>
-<canvas id="scene" width="1000" height="520"></canvas>
-<div class="buttons" style="padding:12px 16px;border-top:1px solid #e8eff1">
-<button id="play">▶ ابدأ الحركة</button><button class="secondary" id="pause">Ⅱ إيقاف</button><button class="secondary" id="cut" style="display:none">✂ اقطع الخيط</button>
-<span class="hint" id="motionState" style="align-self:center;margin-right:10px">جاهز للتجربة</span>
-</div>
-</section>
-
-<aside class="panel">
-<div class="panel-head"><h3>لوحة التحكم</h3><span class="hint">تغيير المتغيرات</span></div>
-<div class="controls">
-<div class="control" id="c_m"><div class="control-top"><label id="l_m">كتلة الجسم</label><span class="value" id="mV"></span></div><input id="m" type="range" min="0.1" max="5" step="0.05" value="0.5"></div>
-<div class="control" id="c_r"><div class="control-top"><label id="l_r">نصف القطر / الميل</label><span class="value" id="rV"></span></div><input id="r" type="range" min="0.2" max="3" step="0.05" value="1"></div>
-<div class="control" id="c_w"><div class="control-top"><label id="l_w">السرعة / الزاوية</label><span class="value" id="wV"></span></div><input id="w" type="range" min="1" max="10" step="0.1" value="4"></div>
-<div class="buttons"><button id="reset">إعادة الضبط</button></div>
-</div>
-<div class="results">
-<div class="metric"><small id="m1Name">السرعة الخطية v</small><strong id="r1">—</strong></div>
-<div class="metric"><small id="m2Name">العجلة المركزية a<sub>c</sub></small><strong id="r2">—</strong></div>
-<div class="metric"><small id="m3Name">القوة المركزية F<sub>c</sub></small><strong id="r3">—</strong></div>
-<div class="metric"><small id="m4Name">قوة إضافية / رد فعل</small><strong id="r4">—</strong></div>
-</div>
-<div class="status" id="status">اختر التجربة من الأزرار بالأعلى وتفاعل مع المتغيرات.</div>
-</aside>
-</div>
-
-<div class="below" id="lesson-details">
-<section class="panel"><div class="content">
-<h3>شرح التطبيقات الفيزيائية للمنهج</h3>
-<p><b>1. كرة بخيط في دائرة أفقية:</b> الشد في الخيط هو المصدر الوحيد للقوة المركزية $F_c = \frac{mv^2}{r} = m\omega^2 r$. عند قطع الخيط تنعدم القوة المركزية وينطلق الجسم في خط مستقيم مماس للمسار.</p>
-<p><b>2. القطار الدوار (المنحنيات المائلة):</b> لكي يتحرك القطار أو السيارة في منعطف دائري آمن دون انزلاق، تساهم مركبة قوة رد الفعل العمودية ($N \sin\theta$) مع قوة الاحتكاك في توفير القوة المركزية اللازمة للدوران.</p>
-<p><b>3. كرة داخل وعاء مخروطي:</b> تتحرك الكرة في مسار أفقي دائري بداخل قمع أو إناء مخروطي بزاوية ميل. القوة المركزية هنا تنتج من محصلة مركبة رد الفعل العمودية وقوة الجاذبية (أو مركبة رد الفعل الأفقية وحدها حسب زاوية ميل جدار الوعاء).</p>
-<div class="eq">F<sub>c</sub> = m v² / r</div>
-</div></section>
-
-<section class="panel"><div class="content">
-<h3>اختبر فهمك</h3>
-<p>في تجربة القطار الدوار على منعطف مائل، ما هي القوة الأساسية التي توفر القوة المركزية للدوران في غياب الاحتكاك؟</p>
-<button class="choice" data-c="a">مركبة قوة رد الفعل العمودية باتجاه مركز المنحنى.</button>
-<button class="choice" data-c="b">وزن القطار الأسفل.</button>
-<button class="choice" data-c="c">قوة الطرد المركزي الخارجة عن المسار.</button>
-<div class="feedback" id="feedback" aria-live="polite"></div>
-</div></section>
-</div>
-<div class="footer">مختبر الفيزياء التفاعلي · أحمد السيد غريب النجار · 01070328288</div>
-</main>
-
+<header><div class="brand"><div class="logo">↻</div><div><h1>معمل عزم القوة</h1><p class="sub">الفصل الأول · الميكانيكا · الدرس 1-4</p></div></div><a href="index.html">← العودة إلى قائمة المعامل</a></header>
+<main><section class="hero"><h2>لماذا يسهل فتح الباب من المقبض؟</h2><p>جرّب بنفسك كيف تغيّر مقدار القوة وطول ذراعها والزاوية بينهما التأثير الدوراني. حرّك القيم وشاهد ذراع القوة العمودي والعزم يتغيران لحظيًا.</p></section>
+<div class="layout"><section class="panel"><div class="panel-head"><h3>🔧 محاكاة مفتاح ربط يدور حول محور</h3><span style="font-size:12px;color:#607887">نموذج تفاعلي</span></div><div class="scene"><canvas id="scene" width="780" height="500" aria-label="رسم تفاعلي لمفتاح ربط وقوة وعزم"></canvas></div><div class="scene-note">السهم البرتقالي يمثل القوة، والخط المتقطع يوضح خط عملها، والبعد العمودي d هو ذراع العزم.</div><div class="readouts"><div class="metric"><span>عزم القوة τ</span><strong id="torque">0.00 N·m</strong><small id="sense">لا يوجد تأثير دوراني</small></div><div class="metric"><span>ذراع العزم العمودي d</span><strong id="arm">0.00 m</strong><small>d = L sin θ</small></div><div class="metric"><span>مركبة القوة العمودية</span><strong id="perp">0.00 N</strong><small>F⊥ = F sin θ</small></div><div class="metric"><span>الزاوية θ بين القوة والذراع</span><strong id="angle">90°</strong><small>عند 90° يكون العزم أقصى ما يمكن، وعند 0° ينعدم</small></div></div></section>
+<aside class="panel"><div class="panel-head"><h3>لوحة التحكم</h3><span>غيّر القيم</span></div><div class="controls"><div class="control"><label for="force">مقدار القوة F <output id="forceVal">10 N</output></label><input id="force" type="range" min="0" max="20" step="0.5" value="10"></div><div class="control"><label for="length">طول الذراع L <output id="lengthVal">1.0 m</output></label><input id="length" type="range" min="0.2" max="2" step="0.1" value="1"></div><div class="control"><label for="theta">الزاوية θ بين القوة والذراع <output id="thetaVal">90°</output></label><input id="theta" type="range" min="0" max="90" step="1" value="90"></div><div class="control"><label for="direction">اتجاه الدوران الناتج</label><select id="direction"><option value="1">عكس اتجاه عقارب الساعة (+)</option><option value="-1">مع اتجاه عقارب الساعة (−)</option></select></div><div class="buttons"><button class="btn" id="animate">▶ ابدأ الدوران</button><button class="btn secondary" id="reset">↺ إعادة الضبط</button></div><div class="tip">اسحب الزاوية لليمين واليسار لتلاحظ تغير انطباق القوة على امتداد الذراع وحتى تعامدها التام!</div></div></aside></div>
+<div class="below"><section class="panel content"><h3>📘 الفكرة والقوانين</h3><p><b>عزم القوة</b> هو مقياس قدرة القوة على إحداث دوران حول محور أو نقطة ارتكاز.</p><div class="formula">τ = F × d = F × L × sin θ</div><ul><li><b>F:</b> مقدار القوة بوحدة النيوتن (N).</li><li><b>L:</b> المسافة من محور الدوران إلى نقطة تأثير القوة (m).</li><li><b>θ:</b> الزاوية المحصورة بين اتجاه القوة وذراعها.</li><li><b>d:</b> ذراع العزم العمودي (d = L sin θ).</li></ul><div class="good">وحدة العزم: نيوتن·متر (N·m)، ولا نكتبها جولًا؛ لأن العزم أثر دوراني وليس طاقة.</div></section><section class="panel content"><h3>🧠 اكتشف بنفسك</h3><ol><li>اجعل الزاوية 90°: يصبح ذراع العزم مساويًا لطول الذراع تمامًا، ويكون العزم أقصى ما يمكن.</li><li>اجعل الزاوية 0°: تصبح القوة موازية تمامًا للذراع ويمر خط عملها بالمحور، فينعدم العزم تمامًا.</li><li>ضاعف القوة مع ثبات الباقي: يتضاعف العزم.</li><li>اعكس اتجاه الدوران: تتغير إشارة العزم فقط، ولا يتغير مقداره.</li></ol><div class="tip">اصطلاح الإشارة هنا: عكس عقارب الساعة موجب، ومع عقارب الساعة سالب.</div></section></div>
+<section class="panel quiz" style="margin-top:18px"><h3>اختبر فهمك</h3><div class="q"><b>1) تؤثر قوة 8 N عموديًا على مفتاح طوله 0.5 m. ما مقدار العزم؟</b><div class="answers"><button data-q="1" data-a="0">2 N·m</button><button data-q="1" data-a="1">4 N·m</button><button data-q="1" data-a="2">8 N·m</button><button data-q="1" data-a="3">16 N·m</button></div><div class="feedback" id="f1"></div></div><div class="q"><b>2) متى يكون عزم القوة صفرًا؟</b><div class="answers"><button data-q="2" data-a="0">عندما تكون الزاوية 90 درجة</button><button data-q="2" data-a="1">عندما تكون الزاوية 0 درجة (ينطبق خط العمل على المحور)</button><button data-q="2" data-a="2">عندما يكون طول الذراع أكبر ما يمكن</button><button data-q="2" data-a="3">عندما تزداد القوة</button></div><div class="feedback" id="f2"></div></div><div class="q"><b>3) الزاوية θ في القانون τ = FL sin θ هي الزاوية بين:</b><div class="answers"><button data-q="3" data-a="0">القوة والأفقي</button><button data-q="3" data-a="1">القوة وذراع القوة</button><button data-q="3" data-a="2">الذراع والرأسي دائمًا</button><button data-q="3" data-a="3">القوة ومحور الدوران</button></div><div class="feedback" id="f3"></div></div></section>
+<footer>مختبر الفيزياء التفاعلي · الدرس 1-4 عزم القوة · نموذج مثالي يهمل الاحتكاك ومقاومة الحركة</footer></main>
 <script>
-(()=>{
-const $=id=>document.getElementById(id),canvas=$('scene'),c=canvas.getContext('2d');
-let mode=1,running=false,raf=0,last=0,th=0,released=false,ballX=0,ballY=0,ballVx=0,ballVy=0,trail=[];
+(()=>{'use strict';const $=id=>document.getElementById(id),canvas=$('scene'),ctx=canvas.getContext('2d');let running=false,rotation=0,last=0;const state={F:10,L:1,theta:90,dir:1};const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function values(){const rad=state.theta*Math.PI/180,d=state.L*Math.sin(rad),perp=state.F*Math.sin(rad),tau=state.dir*state.F*d;$('torque').textContent=(Math.abs(tau)<.005?0:tau).toFixed(2)+' N·m';$('sense').textContent=Math.abs(tau)<.005?'لا يوجد تأثير دوراني':tau>0?'عكس عقارب الساعة (+)':'مع عقارب الساعة (−)';$('arm').textContent=d.toFixed(2)+' m';$('perp').textContent=perp.toFixed(2)+' N';$('angle').textContent=state.theta+'°';$('forceVal').textContent=state.F.toFixed(1)+' N';$('lengthVal').textContent=state.L.toFixed(1)+' m';$('thetaVal').textContent=state.theta+'°';draw();}
+function arrow(x1,y1,x2,y2,color,width=7){const a=Math.atan2(y2-y1,x2-x1),head=17;ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.beginPath();ctx.moveTo(x2,y2);ctx.lineTo(x2-head*Math.cos(a-.48),y2-head*Math.sin(a-.48));ctx.lineTo(x2-head*Math.cos(a+.48),y2-head*Math.sin(a+.48));ctx.closePath();ctx.fill();}
+function draw(){const w=780,h=500;ctx.clearRect(0,0,w,h);
+const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'#eaf7fb');g.addColorStop(.7,'#f8fbf7');g.addColorStop(.701,'#dce9d6');g.addColorStop(1,'#c7ddc0');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+ctx.fillStyle='#ffffff80';ctx.fillRect(35,35,710,270);ctx.strokeStyle='#d7e7e9';ctx.lineWidth=1;for(let x=55;x<750;x+=35){ctx.beginPath();ctx.moveTo(x,40);ctx.lineTo(x,300);ctx.stroke();}for(let y=55;y<300;y+=35){ctx.beginPath();ctx.moveTo(40,y);ctx.lineTo(740,y);ctx.stroke();}
+const px=230,py=315,scale=205*state.L/1.4,angle=rotation,ex=px+Math.cos(angle)*scale,ey=py-Math.sin(angle)*scale;
+ctx.fillStyle='#9b7655';ctx.fillRect(65,390,650,20);ctx.fillStyle='#74543d';ctx.fillRect(95,410,18,70);ctx.fillRect(665,410,18,70);
+ctx.fillStyle='#536f7b';ctx.fillRect(px-32,py+15,64,70);ctx.fillStyle='#78929c';ctx.fillRect(px-45,py+5,90,18);ctx.fillStyle='#354f5b';ctx.beginPath();ctx.arc(px,py,16,0,Math.PI*2);ctx.fill();ctx.fillStyle='#dce8eb';ctx.beginPath();ctx.arc(px,py,7,0,Math.PI*2);ctx.fill();
+ctx.lineCap='round';ctx.strokeStyle='#617984';ctx.lineWidth=25;ctx.beginPath();ctx.moveTo(px+4,py+5);ctx.lineTo(ex+4,ey+5);ctx.stroke();const metal=ctx.createLinearGradient(0,py-15,0,py+15);metal.addColorStop(0,'#e8f0f2');metal.addColorStop(.45,'#91aab4');metal.addColorStop(1,'#506d79');ctx.strokeStyle=metal;ctx.lineWidth=20;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(ex,ey);ctx.stroke();ctx.strokeStyle='#eaf2f4';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(px,py-6);ctx.lineTo(ex,ey-6);ctx.stroke();ctx.fillStyle='#617b85';ctx.beginPath();ctx.arc(ex,ey,17,0,Math.PI*2);ctx.fill();ctx.fillStyle='#e7eff1';ctx.beginPath();ctx.arc(ex,ey,9,0,Math.PI*2);ctx.fill();
 
-function setMode(m){
-  mode=m; running=false; cancelAnimationFrame(raf); released=false; th=0; trail=[];
-  ['tab1','tab2','tab3'].forEach((id,idx)=.>( $(id).style.background = (idx+1===m)?'#087fa5':'#edf4f5', $(id).style.color = (idx+1===m)?'#fff':'#28596a' ));
-  if(m===1){
-    $('modeTitle').textContent='منظر علوي لحركة كرة بخيط';
-    $('l_m').textContent='كتلة الكرة (m)'; $('l_r').textContent='نصف القطر (r)'; $('l_w').textContent='السرعة الزاوية (ω)';
-    $('m').min=0.1; $('m').max=5; $('m').value=0.5;
-    $('r').min=0.2; $('r').max=2.5; $('r').value=1;
-    $('w').min=1; $('w').max=10; $('w').value=4;
-    $('cut').style.display='inline-block';
-    $('m1Name').textContent='السرعة v = ωr'; $('m2Name').textContent='العجلة a_c'; $('m3Name').textContent='القوة F_c (الشد)'; $('m4Name').textContent='الزمن الدوري T';
-  }else if(m===2){
-    $('modeTitle').textContent='حركة القطار الدوار على منحنى مائل';
-    $('l_m').textContent='كتلة القطار (m)'; $('l_r').textContent='زاوية الميل (θ)'; $('l_w').textContent='السرعة الخطية (v)';
-    $('m').min=100; $('m').max=2000; $('m').value=800;
-    $('r').min=10; $('r').max=45; $('r').value=25;
-    $('w').min=5; $('w').max=35; $('w').value=20;
-    $('cut').style.display='none';
-    $('m1Name').textContent='نصف القطر r'; $('m2Name').textContent='العجلة a_c'; $('m3Name').textContent='القوة المركزية F_c'; $('m4Name').textContent='قوة رد الفعل N';
-  }else{
-    $('modeTitle').textContent='كرة تتحرك داخل وعاء مخروطي';
-    $('l_m').textContent='كتلة الكرة (m)'; $('l_r').textContent='نصف قطر الدائرة (r)'; $('l_w').textContent='السرعة الزاوية (ω)';
-    $('m').min=0.1; $('m').max=3; $('m').value=0.4;
-    $('r').min=0.5; $('r').max=2; $('r').value=1;
-    $('w').min=1; $('w').max=8; $('w').value=3;
-    $('cut').style.display='none';
-    $('m1Name').textContent='السرعة v'; $('m2Name').textContent='ارتفاع الكرة h'; $('m3Name').textContent='القوة المركزية F_c'; $('m4Name').textContent='رد الفعل العمودي N';
-  }
-  updateCalc(); draw();
+const rodAngle = -angle; 
+const forceAng = rodAngle - state.dir * (state.theta * Math.PI / 180);
+const flen = state.F * 5.2, fx = ex + Math.cos(forceAng) * flen, fy = ey + Math.sin(forceAng) * flen;
+
+ctx.save();ctx.setLineDash([8,6]);ctx.strokeStyle='#c77f1d';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(fx+(px-ex)*.2,fy+(py-ey)*.2);ctx.stroke();ctx.restore();arrow(ex,ey,fx,fy,'#ee9f22',7);
+
+const ux=Math.cos(forceAng),uy=Math.sin(forceAng),vx=px-ex,vy=py-ey,t=vx*ux+vy*uy,footx=ex+t*ux,footy=ey+t*uy;
+ctx.save();ctx.setLineDash([7,6]);ctx.strokeStyle='#1684a4';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(ex-ux*190,ey-uy*190);ctx.lineTo(ex+ux*240,ey+uy*240);ctx.stroke();ctx.strokeStyle='#23865b';ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(footx,footy);ctx.stroke();ctx.restore();ctx.fillStyle='#23865b';ctx.beginPath();ctx.arc(footx,footy,6,0,Math.PI*2);ctx.fill();
+
+ctx.strokeStyle='#087fa5';ctx.lineWidth=3;ctx.beginPath();
+ctx.arc(ex, ey, 45, rodAngle, forceAng, state.dir > 0);
+ctx.stroke();
+
+ctx.font='bold 18px Tahoma';ctx.fillStyle='#9b6415';ctx.textAlign='center';ctx.fillText('F = '+state.F.toFixed(1)+' N',fx+ (fx-ex)*.15,fy+(fy-ey)*.15-16);ctx.fillStyle='#17647b';ctx.fillText('L = '+state.L.toFixed(1)+' m',(px+ex)/2,(py+ey)/2-23);ctx.fillStyle='#23865b';ctx.fillText('d = '+(state.L*Math.sin(state.theta*Math.PI/180)).toFixed(2)+' m',(px+footx)/2-5,(py+footy)/2+25);ctx.fillStyle='#087fa5';ctx.fillText('θ = '+state.theta+'°',ex+62,ey-35);ctx.fillStyle='#294b5a';ctx.textAlign='right';ctx.font='bold 16px Tahoma';ctx.fillText('محور الدوران O',px-18,py+104);ctx.font='14px Tahoma';ctx.fillStyle='#526d7a';ctx.fillText('خط عمل القوة',730,65);
+ctx.strokeStyle='#d38b25';ctx.lineWidth=4;ctx.beginPath();ctx.arc(px,py,65,-.25,1.25,state.dir<0);ctx.stroke();const a=state.dir>0?1.25:-.25;const ax=px+65*Math.cos(a),ay=py-65*Math.sin(a);ctx.fillStyle='#d38b25';ctx.beginPath();ctx.arc(ax,ay,5,0,Math.PI*2);ctx.fill();ctx.font='bold 15px Tahoma';ctx.textAlign='left';ctx.fillText(state.dir>0?'↶ عكس عقارب الساعة':'↷ مع عقارب الساعة',42,75);
 }
-
-function updateCalc(){
-  const m=+($('m').value), r=+($('r').value), w=+($('w').value);
-  if(mode===1){
-    const v=w*r, ac=w*w*r, fc=m*ac, T=2*Math.PI/w;
-    $('mV').textContent=m.toFixed(2)+' kg'; $('rV').textContent=r.toFixed(2)+' m'; $('wV').textContent=w.toFixed(1)+' rad/s';
-    $('r1').textContent=v.toFixed(2)+' m/s'; $('r2').textContent=ac.toFixed(2)+' m/s²'; $('r3').textContent=fc.toFixed(2)+' N'; $('r4').textContent=T.toFixed(2)+' s';
-    $('status').textContent=`الشد في الخيط (القوة المركزية) = ${fc.toFixed(2)} N، والسرعة الخطية = ${v.toFixed(2)} m/s.`;
-  }else if(mode===2){
-    const theta=r*Math.PI/180, v=w, ac=(v*v)/r, fc=m*ac, g=9.8, N=Math.sqrt(Math.pow(m*g,2)+Math.pow(fc,2));
-    $('mV').textContent=m.toFixed(0)+' kg'; $('rV').textContent=r.toFixed(0)+'°'; $('wV').textContent=v.toFixed(1)+' m/s';
-    $('r1').textContent=w.toFixed(1)+' m'; $('r2').textContent=ac.toFixed(2)+' m/s²'; $('r3').textContent=fc.toFixed(2)+' N'; $('r4').textContent=N.toFixed(1)+' N';
-    $('status').textContent=`القطار يتحرك بسرعة ${v} m/s على منحنى مائل بزاوية ${r}°، القوة المركزية المطلوبة = ${fc.toFixed(0)} N.`;
-  }else{
-    const v=w*r, ac=w*w*r, fc=m*ac, g=9.8, h=r/Math.tan(30*Math.PI/180), N=Math.hypot(m*g, fc);
-    $('mV').textContent=m.toFixed(2)+' kg'; $('rV').textContent=r.toFixed(2)+' m'; $('wV').textContent=w.toFixed(1)+' rad/s';
-    $('r1').textContent=v.toFixed(2)+' m/s'; $('r2').textContent=h.toFixed(2)+' m'; $('r3').textContent=fc.toFixed(2)+' N'; $('r4').textContent=N.toFixed(1)+' N';
-    $('status').textContent=`الكرة تدور داخل الوعاء المخروطي بسرعة زاوية ${w} rad/s، وتتزن تحت تأثير وزنها ورد الفعل.`;
-  }
-}
-
-function draw(){
-  c.clearRect(0,0,1000,520);
-  let g=c.createLinearGradient(0,0,0,520);
-  g.addColorStop(0,'#e9f4f1'); g.addColorStop(1,'#dde9e6');
-  c.fillStyle=g; c.fillRect(0,0,1000,520);
-
-  if(mode===1){
-    // منظر علوي للكرة والخيط
-    const cx=500, cy=260, R=+($('r').value)*120;
-    c.strokeStyle='#8fa9b0'; c.lineWidth=3; c.setLineDash([8,8]);
-    c.beginPath(); c.arc(cx,cy,R,0,Math.PI*2); c.stroke(); c.setLineDash([]);
-    c.fillStyle='#294e60'; c.beginPath(); c.arc(cx,cy,6,0,Math.PI*2); c.fill();
-    
-    let x = released ? ballX : cx + R*Math.cos(th);
-    let y = released ? ballY : cy - R*Math.sin(th);
-
-    if(!released){
-      c.strokeStyle='#7b6a4f'; c.lineWidth=3;
-      c.beginPath(); c.moveTo(cx,cy); c.lineTo(x,y); c.stroke();
-    }
-    c.fillStyle='#1687a5'; c.beginPath(); c.arc(x,y,14,0,Math.PI*2); c.fill();
-    c.strokeStyle='#183447'; c.lineWidth=2; c.stroke();
-
-  }else if(mode===2){
-    // رسم القطار الدوار (منظر أمامي لمسار مائل)
-    const cx=500, cy=300;
-    c.strokeStyle='#557788'; c.lineWidth=10; c.beginPath(); c.arc(cx,cy,180,Math.PI,Math.PI*2); c.stroke();
-    
-    let ang = Math.PI + th%(Math.PI);
-    let px = cx + 180*Math.cos(ang);
-    let py = cy + 180*Math.sin(ang);
-
-    c.fillStyle='#d6452f'; c.fillRect(px-20, py-15, 40, 25);
-    c.fillStyle='#183447'; c.beginPath(); c.arc(px-12,py+12,6,0,Math.PI*2); c.arc(px+12,py+12,6,0,Math.PI*2); c.fill();
-
-  }else{
-    // رسم وعاء مخروطي من الداخل
-    const cx=500, cy=180;
-    c.strokeStyle='#526d7a'; c.lineWidth=4;
-    c.beginPath(); c.moveTo(cx-180, cy); c.lineTo(cx, cy+250); c.lineTo(cx+180, cy); c.stroke();
-
-    let R = +($('r').value)*90;
-    let bx = cx + R*Math.cos(th);
-    let by = cy + 120 + Math.sin(th)*15;
-
-    c.fillStyle='#d18a42'; c.beginPath(); c.arc(bx, by, 12, 0, Math.PI*2); c.fill();
-  }
-}
-
-function step(ts){
-  if(!running) return;
-  if(!last) last=ts;
-  const dt=Math.min((ts-last)/1000,.04);
-  last=ts;
-  const w=+($('w').value);
-  if(mode===1){
-    if(!released) th += w*dt;
-    else { ballX += ballVx*dt; ballY += ballVy*dt; }
-  }else{
-    th += w*dt*0.5;
-  }
-  draw();
-  raf=requestAnimationFrame(step);
-}
-
-$('tab1').onclick=()=>setMode(1);
-$('tab2').onclick=()=>setMode(2);
-$('tab3').onclick=()=>setMode(3);
-
-['m','r','w'].forEach(id=>$(id).oninput=()=>{ updateCalc(); draw(); });
-
-$('play').onclick=()=>{
-  if(running) return;
-  running=true; last=0;
-  $('motionState').textContent='الحركة تعمل الآن...';
-  raf=requestAnimationFrame(step);
-};
-
-$('pause').onclick=()=>{
-  running=false; cancelAnimationFrame(raf);
-  $('motionState').textContent='إيقاف مؤقت';
-};
-
-$('cut').onclick=()=>{
-  if(!running || released) return;
-  const r=+($('r').value)*120, w=+($('w').value);
-  ballX = 500 + r*Math.cos(th);
-  ballY = 260 - r*Math.sin(th);
-  let v = w*(r/120);
-  ballVx = -Math.sin(th)*v*60;
-  ballVy = -Math.cos(th)*v*60;
-  released=true;
-  $('motionState').textContent='قُطع الخيط! تنطلق الكرة في خط مستقيم مماس للمسار.';
-};
-
-$('reset').onclick=()=>setMode(mode);
-
-document.querySelectorAll('.choice').forEach(b=>b.onclick=()=> {
-  $('feedback').textContent = (b.dataset.c==='a') ? 'إجابة صحيحة! مركبة رد الفعل العمودية المائلة توفر القوة المركزية.' : 'خطأ، راجع تحليل القوى على المنحنى المائل.';
-});
-
-setMode(1);
+function tick(ts){if(!running)return;const dt=Math.min((ts-last)/1000,.04);last=ts;const tau=state.F*state.L*Math.sin(state.theta*Math.PI/180);rotation=clamp(rotation+state.dir*(tau/50)*dt,-.42,.42);draw();if(Math.abs(rotation)>=.42){running=false;$('animate').textContent='▶ ابدأ الدوران';}else requestAnimationFrame(tick);}
+['force','length','theta'].forEach(id=>$(id).addEventListener('input',()=>{state[id==='force'?'F':id==='length'?'L':'theta']=Number($(id).value);rotation=0;values();}));$('direction').addEventListener('change',()=>{state.dir=Number($('direction').value);rotation=0;values();});$('animate').addEventListener('click',()=>{if(running){running=false;$('animate').textContent='▶ ابدأ الدوران';return;}rotation=0;running=true;last=performance.now();$('animate').textContent='Ⅱ إيقاف الدوران';requestAnimationFrame(tick);});$('reset').addEventListener('click',()=>{running=false;rotation=0;Object.assign(state,{F:10,L:1,theta:90,dir:1});$('force').value=10;$('length').value=1;$('theta').value=90;$('direction').value='1';$('animate').textContent='▶ ابدأ الدوران';values();});
+const correct={1:1,2:1,3:1},why={1:'τ = F L = 8 × 0.5 = 4 N·m لأن القوة عمودية (θ=90°).',2:'عندما تصبح الزاوية θ = 0° يمر خط عمل القوة بمحور الدوران فينعدم العزم.',3:'θ هي الزاوية بين اتجاه القوة وذراع القوة، وتكون أقصى ما يمكن عندما تكون 90°.'};document.querySelectorAll('.answers button').forEach(b=>b.addEventListener('click',()=>{const q=Number(b.dataset.q),a=Number(b.dataset.a),f=$('f'+q);f.textContent=a===correct[q]?'✓ إجابة صحيحة! '+why[q]:'✗ حاول مرة أخرى. '+why[q];f.style.color=a===correct[q]?'#23865b':'#b35c32';}));values();
 })();
-</script>
-</body></html>
+</script></body></html>
